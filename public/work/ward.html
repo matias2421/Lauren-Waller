@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ward — Lauren Waller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-overlay" aria-hidden="true"></div>
+  <div class="page-inner">
+    <header class="page-header">
+      <a href="work.html" class="page-header-back">Work</a>
+      <small class="page-header-copyright">&copy; 2025</small>
+    </header>
+    <section class="project-hero" aria-label="Project heading">
+      <h1 class="section-title section-title--lg">Ward</h1>
+      <p class="project-subtitle">Webflow development for Ward — a clean, modern website built with attention to detail and responsive design.</p>
+    </section>
+    <main>
+      <dl class="project-meta">
+        <div class="project-meta-item">
+          <dt class="project-meta-label">Role</dt>
+          <dd class="project-meta-value">Webflow Development</dd>
+        </div>
+        <div class="project-meta-item">
+          <dt class="project-meta-label">Responsibilities</dt>
+          <dd class="project-meta-value">Consultation, Webflow Setup, Development, Custom CSS, Animation, SEO, Launch</dd>
+        </div>
+        
+      </dl>
+      <article class="project-body prose">
+        <p>Ward is a project that showcases clean, modern web design principles built entirely in Webflow. The focus was on creating a visually appealing and highly functional website that performs well across all devices.</p><p>The development process involved careful attention to responsive design, custom CSS animations, and CMS integration to make the site easy to maintain by the client going forward.</p>
+      </article>
+      <div class="project-cta">
+        <a href="#" class="project-cta-link">Check it out</a>
+      </div>
+    </main>
+    <nav class="project-nav" aria-label="Project navigation">
+      <span></span>
+      <a href="superlink.html">Superlink &rsaquo;</a>
+    </nav>
+  </div>
+  <script>
+    (function () {
+      var overlay = document.querySelector('.page-overlay');
+      if (!overlay) return;
+      overlay.offsetHeight;
+      setTimeout(function () { overlay.classList.add('hidden'); }, 100);
+      setTimeout(function () { overlay.style.pointerEvents = 'none'; }, 1400);
+    })();
+  </script>
+</body>
+</html>

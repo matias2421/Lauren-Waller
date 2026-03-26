@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Lauren Waller</title>
+  <meta name="description" content="Framer website templates by Lauren Waller. Starting from $19.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="page-overlay"></div>
+
+  <div class="page-inner">
+
+    <!-- Header -->
+    <header class="page-header">
+      <a href="index.html" class="page-header-back">Home</a>
+      <small class="page-header-copyright">&copy; 2025</small>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero" aria-label="Shop heading">
+      <h1 class="section-title section-title--lg">Shop</h1>
+    </section>
+
+    <!-- Introduction -->
+    <section class="shop-intro" aria-label="Shop introduction">
+      <p>
+        Premium Framer website templates designed and developed by Lauren Waller.
+        Beautiful, responsive, and easy to customize.
+      </p>
+    </section>
+
+    <!-- Templates Grid -->
+    <main>
+      <section class="shop-grid" aria-label="Templates for sale">
+
+        <a href="#" class="shop-card">
+          <figure class="shop-card-image">
+            <span class="shop-card-placeholder">Jon Lucas</span>
+          </figure>
+          <div class="shop-card-info">
+            <span class="shop-card-name">Jon Lucas</span>
+            <span class="shop-card-price">$19</span>
+          </div>
+        </a>
+
+        <a href="#" class="shop-card">
+          <figure class="shop-card-image">
+            <span class="shop-card-placeholder">Mira</span>
+          </figure>
+          <div class="shop-card-info">
+            <span class="shop-card-name">Mira</span>
+            <span class="shop-card-price">$29</span>
+          </div>
+        </a>
+
+        <a href="#" class="shop-card">
+          <figure class="shop-card-image">
+            <span class="shop-card-placeholder">Folio</span>
+          </figure>
+          <div class="shop-card-info">
+            <span class="shop-card-name">Folio</span>
+            <span class="shop-card-price">$19</span>
+          </div>
+        </a>
+
+      </section>
+    </main>
+
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.querySelector('.page-overlay');
+      if (!overlay) return;
+      overlay.offsetHeight;
+      setTimeout(function() { overlay.classList.add('hidden'); }, 100);
+      setTimeout(function() { overlay.style.pointerEvents = 'none'; }, 1400);
+    })();
+  </script>
+
+</body>
+</html>
