@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cssco - Lauren Waller</title>
+  <meta name="description" content="A set of CSS photo filters inspired by VSCO, featured on Product Hunt.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <div class="page-overlay"></div>
+
+  <div class="page-inner">
+
+    <!-- Header -->
+    <header class="page-header">
+      <a href="../work.html" class="page-header-back">Work</a>
+      <small class="page-header-copyright">&copy; 2025</small>
+    </header>
+
+    <!-- Hero -->
+    <section class="project-hero" aria-label="Project heading">
+      <h1 class="section-title section-title--lg">Cssco</h1>
+      <p class="project-subtitle">
+        I created a set of CSS photo filters inspired by VSCO and got featured
+        on Product Hunt.
+      </p>
+    </section>
+
+    <!-- Meta -->
+    <main>
+      <dl class="project-meta">
+        <div class="project-meta-item">
+          <dt class="project-meta-label">Role</dt>
+          <dd class="project-meta-value">Creator, Designer, Developer</dd>
+        </div>
+        <div class="project-meta-item">
+          <dt class="project-meta-label">Responsibilities</dt>
+          <dd class="project-meta-value">Everything. An idea I developed from start to finish on my own.</dd>
+        </div>
+        <div class="project-meta-item">
+          <dt class="project-meta-label">URL</dt>
+          <dd class="project-meta-value"><a href="https://github.com/laurenwaller/cssco" target="_blank" rel="noopener">https://github.com/laurenwaller/cssco</a></dd>
+        </div>
+      </dl>
+
+      <!-- Body -->
+      <article class="project-body prose">
+        <p>
+          CSSCO is a library of photographic filters made with CSS, inspired by
+          <a href="#">VSCO</a> and <a href="#">CSSgram</a>. It was made for designers
+          and is a tool for adding VSCO-like filters to photographs using code.
+        </p>
+        <blockquote>
+          Instead of having to use external photo editing tools like Photoshop or VSCO,
+          you can grade your photographs in the browser.
+        </blockquote>
+        <p>
+          CSSCO was one of those ideas that I couldn't stop thinking about and I jumped
+          into figuring it out as fast as I could. If you're a front-end developer,
+          designer or photographer &ndash; try it out, I would love to know what you think.
+        </p>
+        <p>
+          Seeing this idea through to the end reaped its rewards. With the help of friend
+          and colleague <a href="#">Shawn Roos</a>, I submitted CSSCO to Product Hunt in
+          2016 and was lucky enough to get <a href="#">featured</a>, allowing it to reach
+          many of the popular web design blogs, and hundreds of influential people on Twitter.
+        </p>
+        <p>
+          After the feature on Product Hunt, CSSCO was tweeted by the likes of Sidebar,
+          Marvel, PetaPixel and Speckyboy. My repo trended on Github that week, accumulating
+          over 700 stars and eventually got added to <a href="#">cdnjs</a>.
+        </p>
+      </article>
+
+      <!-- CTA -->
+      <div class="project-cta">
+        <a href="https://github.com/laurenwaller/cssco" target="_blank" rel="noopener" class="project-cta-link">Check it out</a>
+      </div>
+    </main>
+
+    <!-- Prev / Next -->
+    <nav class="project-nav" aria-label="Project navigation">
+      <a href="margravine.html">&lsaquo; Margravine</a>
+      <a href="yumyuck.html">YumYuck &rsaquo;</a>
+    </nav>
+
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.querySelector('.page-overlay');
+      if (!overlay) return;
+      overlay.offsetHeight;
+      setTimeout(function() { overlay.classList.add('hidden'); }, 100);
+      setTimeout(function() { overlay.style.pointerEvents = 'none'; }, 1400);
+    })();
+  </script>
+
+</body>
+</html>

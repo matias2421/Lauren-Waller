@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Lauren Waller</title>
+  <meta name="description" content="Get in touch with Lauren Waller for a beautiful, well-structured website.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="page-overlay" aria-hidden="true"></div>
+
+  <div class="page-inner">
+
+    <header class="page-header">
+      <a href="index.html" class="page-header-back">Home</a>
+      <small class="page-header-copyright">&copy; 2025</small>
+    </header>
+
+    <main class="contact-main">
+      <section class="contact-content" aria-label="Contact information">
+        <h1 class="contact-hello">Hello.</h1>
+
+        <p class="contact-text">
+          Need a beautiful, well-structured website that you can own and
+          maintain yourself? Get in touch.
+        </p>
+
+        <address class="contact-info">
+          <p>
+            <span class="contact-label">Email:</span>
+            <a href="mailto:legendarywaller@gmail.com">legendarywaller@gmail.com</a>
+          </p>
+          <p>
+            <span class="contact-label">On the Internet:</span>
+            <a href="https://www.linkedin.com/in/lauren-waller/" target="_blank" rel="noopener noreferrer">LinkedIn</a> /
+            <a href="https://dribbble.com/waller_texas" target="_blank" rel="noopener noreferrer">Dribbble</a> /
+            <a href="https://www.threads.com/@waller_texas" target="_blank" rel="noopener noreferrer">Threads</a> /
+            <a href="https://github.com/laurenwaller" target="_blank" rel="noopener noreferrer">Github</a>
+          </p>
+        </address>
+      </section>
+    </main>
+
+  </div>
+
+  <script>
+    (function () {
+      var overlay = document.querySelector('.page-overlay');
+      if (!overlay) return;
+      overlay.getBoundingClientRect();
+      setTimeout(function () { overlay.classList.add('hidden'); }, 100);
+      setTimeout(function () { overlay.style.pointerEvents = 'none'; }, 1400);
+    })();
+  </script>
+
+</body>
+</html>
