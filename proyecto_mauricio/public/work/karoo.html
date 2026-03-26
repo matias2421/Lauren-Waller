@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karoo - Lauren Waller</title>
+  <meta name="description" content="Webflow development for Karoo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <div class="page-overlay"></div>
+
+  <div class="page-inner">
+
+    <!-- Header -->
+    <header class="page-header">
+      <a href="../work.html" class="page-header-back">Work</a>
+      <small class="page-header-copyright">&copy; 2025</small>
+    </header>
+
+    <!-- Hero -->
+    <section class="project-hero" aria-label="Project heading">
+      <h1 class="section-title section-title--lg">Karoo</h1>
+      <p class="project-subtitle">
+        Webflow development for Karoo &ndash; a beautifully crafted website
+        with a focus on storytelling and visual impact.
+      </p>
+    </section>
+
+    <!-- Meta -->
+    <main>
+      <dl class="project-meta">
+        <div class="project-meta-item">
+          <dt class="project-meta-label">Role</dt>
+          <dd class="project-meta-value">Webflow Development</dd>
+        </div>
+        <div class="project-meta-item">
+          <dt class="project-meta-label">Responsibilities</dt>
+          <dd class="project-meta-value">Consultation, Webflow Setup, Development, Custom CSS, Animation, SEO, Launch</dd>
+        </div>
+      </dl>
+
+      <!-- Body -->
+      <article class="project-body prose">
+        <p>
+          Karoo is a project that required careful attention to visual storytelling
+          and brand expression through web design. Built entirely in Webflow, the
+          site leverages custom animations and interactions to create an immersive
+          user experience.
+        </p>
+        <p>
+          The development focused on responsive design, performance optimization,
+          and creating a CMS structure that empowers the client to manage content
+          independently.
+        </p>
+      </article>
+
+      <!-- CTA -->
+      <div class="project-cta">
+        <span class="sub-title">Check it out</span>
+      </div>
+    </main>
+
+    <!-- Prev / Next -->
+    <nav class="project-nav" aria-label="Project navigation">
+      <a href="okalpha.html">&lsaquo; Okalpha</a>
+      <a href="studio.html">Studio &rsaquo;</a>
+    </nav>
+
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.querySelector('.page-overlay');
+      if (!overlay) return;
+      overlay.offsetHeight;
+      setTimeout(function() { overlay.classList.add('hidden'); }, 100);
+      setTimeout(function() { overlay.style.pointerEvents = 'none'; }, 1400);
+    })();
+  </script>
+
+</body>
+</html>

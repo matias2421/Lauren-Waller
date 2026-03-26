@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Lauren Waller</title>
+  <meta name="description" content="I'm Lauren. A designer, maker and problem solver.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="page-overlay" aria-hidden="true"></div>
+
+  <div class="page-inner">
+
+    <header class="page-header">
+      <a href="index.html" class="page-header-back">Home</a>
+      <small class="page-header-copyright">&copy; 2025</small>
+    </header>
+
+    <section class="page-hero" aria-label="About heading">
+      <h1 class="section-title section-title--lg">About</h1>
+    </section>
+
+    <main>
+
+      <!-- Bio -->
+      <article class="about-content prose" aria-label="About Lauren">
+        <h2 class="section-title section-title--md" style="margin-bottom: 2rem;">
+          I'm Lauren. A designer, maker and problem solver.
+        </h2>
+
+        <p>
+          The cusp of art and technology has always fascinated me and I've never been
+          afraid to just jump in and give it a go, whether it's Paint, Photoshop,
+          Sketch or CSS. I've been designing with computers since the day I first
+          opened Microsoft Paint.
+        </p>
+
+        <p>
+          Fast forward to 2023 and I've tried it all, from Digital Campaign Design
+          and Flash Actionscript to Web Design, Animation, HTML/CSS, No-Code Web
+          Development, Product Design and Product Management. Everything I have done,
+          small or big, has been a vital stepping stone for where I am today.
+        </p>
+
+        <p>
+          What excites me most about being a Product Designer is being able to design
+          and create things that have purpose and solve real problems. It goes beyond
+          designing buttons and websites and involves having a passion for designing
+          experiences and solutions that help people, whether it's helping them make
+          better videos, market themselves online, or buy something online.
+        </p>
+
+        <p>
+          Leaning into customer insight and understanding their needs, finding the
+          right problems to solve, delivering solutions as quickly as possible,
+          learning from those and then iterating and improving that value over time
+          is the key to great product design.
+        </p>
+
+        <p>This is one of my favourite quotes (by Peter Drucker):</p>
+
+        <blockquote>
+          "There is nothing so useless as doing efficiently that which should not be done at all."
+        </blockquote>
+
+        <p>
+          This resonates so deeply with me because I have no desire to make pretty
+          things just for the sake of it. Some people love that! But it's not for me.
+          I only want to make, design or build ideas and products that are real, that
+          matter and have an impact in the world.
+        </p>
+      </article>
+
+      <!-- Experience -->
+      <section class="about-section" aria-label="Experience">
+        <h3 class="sub-title">Experience</h3>
+        <div class="prose">
+          <ul>
+            <li>Degree in Brand Communications</li>
+            <li>15 years experience in Digital Design, Web Development, Advertising and Product Development</li>
+          </ul>
+          <p>Within those 15 years, I have:</p>
+          <ul>
+            <li>12 years experience in Web Design</li>
+            <li>10 years experience in Software Design</li>
+            <li>3 years experience in Front-end Web Development</li>
+            <li>5 years experience in Webflow Development</li>
+            <li>1 year experience in Framer Development</li>
+            <li>4 years experience in Product Management</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="about-section" aria-label="Skills">
+        <h3 class="sub-title">Skills</h3>
+        <div class="prose">
+          <p>
+            UI/UX Design / Strategy / Product Management / User Research /
+            Agile Methodologies / Collaboration / Design Sprints / Design Systems /
+            HTML and CSS / CMS Design &amp; Architecture / Webflow Development /
+            Framer Development / Photography / Graphic Design
+          </p>
+        </div>
+      </section>
+
+      <!-- Kudos -->
+      <section class="about-section" aria-label="Kudos" style="padding-bottom: 4rem;">
+        <h3 class="sub-title">Kudos</h3>
+        <div class="prose">
+          <p>
+            Most of what is in this portfolio is team work, it's very rare these days to
+            make anything great all on your own. I have only included work that I had a
+            large contribution to, but whether it's design, ideas, UX, process,
+            engineering, mentorship, advice or creative direction, the following people
+            have influenced my growth and career path in a massive way:
+            <a href="#">Shawn Roos</a>,
+            <a href="#">Wayne Berry</a>,
+            <a href="#">Daniel Klopper</a>,
+            <a href="#">Michael Thorne</a>,
+            <a href="#">Kobus Brummer</a>,
+            <a href="#">Pascal Righini</a>,
+            <a href="#">Jade Scully</a>.
+            THANKYOU.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script>
+    (function () {
+      var overlay = document.querySelector('.page-overlay');
+      if (!overlay) return;
+      overlay.getBoundingClientRect();
+      setTimeout(function () { overlay.classList.add('hidden'); }, 100);
+      setTimeout(function () { overlay.style.pointerEvents = 'none'; }, 1400);
+    })();
+  </script>
+
+</body>
+</html>
