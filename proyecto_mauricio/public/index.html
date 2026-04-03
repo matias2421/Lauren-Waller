@@ -54,18 +54,36 @@
       <p class="bio-role">Framer Developer and Partner.</p>
     </section>
 
-    <!-- Shop promo card -->
-    <a href="shop.html" class="template-card" aria-label="Website templates for Framer — from $19">
-      <div class="template-card-images" aria-hidden="true">
-        <div class="template-card-img">
-  <img src="img/framer-ratecard-1.jpg" alt="Framer template preview">
+  <!-- Shop promo card con carrusel horizontal -->
+<!-- Shop promo card con carrusel -->
+<div class="template-card-wrapper">
+  <a href="shop.html" class="template-card" aria-label="Website templates for Framer — from $19">
+    <div class="template-card-images">
+      <div class="template-card-slideshow">
+        <div class="slideshow-container">
+          <div class="slideshow-track">
+            <div class="slide">
+              <img src="img/framer-ratecard-1.jpg" alt="Framer template preview 1">
+            </div>
+            <div class="slide">
+              <img src="img/framer-editoria-1.jpg" alt="Framer template preview 2">
+            </div>
+            <div class="slide">
+              <img src="img/framer-momento-1.jpg" alt="Framer template preview 3">
+            </div>
+            <div class="slide">
+              <img src="img/framer-justtype-1.jpg" alt="Framer template preview 4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="template-card-info">
+      <span class="template-card-title">Website Templates <br>For Framer</span>
+      <span class="template-card-price">From $19</span>
+    </div>
+  </a>
 </div>
-      </div>
-      <div class="template-card-info">
-        <span class="template-card-title">Website templates for Framer</span>
-        <span class="template-card-price">From $19</span>
-      </div>
-    </a>
 
     <!-- Giant navigation -->
     <nav class="nav-giant" aria-label="Main navigation">
@@ -78,39 +96,72 @@
   </main>
 
   <script>
-    (function () {
-      var overlay = document.querySelector('.page-overlay');
-      if (!overlay) return;
+  (function () {
+    var overlay = document.querySelector('.page-overlay');
+    if (!overlay) return;
 
-      // Duración de la transition del overlay (CSS: 1.2s)
-      var OVERLAY_DURATION = 1200;
+    var OVERLAY_DURATION = 1000;
 
-      // Arrancar la salida del overlay
-      overlay.getBoundingClientRect();
-      setTimeout(function () {
-        overlay.classList.add('hidden');
-      }, 100);
+    overlay.getBoundingClientRect();
+    setTimeout(function () {
+      overlay.classList.add('hidden');
+    }, 100);
 
-      // Cuando el overlay termina, animar SOLO bio-section y nav-giant-links
-      setTimeout(function () {
-        overlay.style.pointerEvents = 'none';
+    setTimeout(function () {
+      overlay.style.pointerEvents = 'none';
 
-        // bio-section: animation vía homeEntrance
-        var bio = document.querySelector('.bio-section-enter');
-        if (bio) bio.classList.add('is-visible');
+      var bio = document.querySelector('.bio-section-enter');
+      if (bio) bio.classList.add('is-visible');
 
-        // nav-giant-links: transition escalonada (no animation — para que hover funcione)
-        var navLinks = document.querySelectorAll('.nav-giant-link');
-        navLinks.forEach(function (link, i) {
-          setTimeout(function () {
-            link.classList.add('is-visible');
-          }, i * 120);
-        });
+      var navLinks = document.querySelectorAll('.nav-giant-link');
+      navLinks.forEach(function (link, i) {
+        setTimeout(function () {
+          link.classList.add('is-visible');
+        }, i * 50);
+      });
 
-      }, 100 + OVERLAY_DURATION);
+    }, OVERLAY_DURATION);
 
-    })();
-  </script>
+  })();
+
+ // Template card slideshow (carrusel horizontal)
+(function() {
+  var track = document.querySelector('.slideshow-track');
+  if (!track) return;
+  
+  var slides = document.querySelectorAll('.slide');
+  var slideCount = slides.length;
+  if (slideCount === 0) return;
+  
+  var currentIndex = 0;
+  var slideInterval = 3000; // Cambia cada 3 segundos
+  
+  function updateSlidePosition() {
+    var translateX = -currentIndex * 100;
+    track.style.transform = 'translateX(' + translateX + '%)';
+  }
+  
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slideCount;
+    updateSlidePosition();
+  }
+  
+  // Iniciar carrusel
+  var interval = setInterval(nextSlide, slideInterval);
+  
+  // Pausar carrusel al hacer hover
+  var card = document.querySelector('.template-card');
+  if (card) {
+    card.addEventListener('mouseenter', function() {
+      clearInterval(interval);
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      interval = setInterval(nextSlide, slideInterval);
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
