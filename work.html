@@ -7,75 +7,77 @@
   <meta name="description" content="A showcase of my best work in Graphic and Web Design, No-Code Development, Product Design and Product Management.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="work-page">
 
-  <div class="page-overlay enter" aria-hidden="true"></div>
-
-  <a href="index.html" class="work-nav-home">Home</a>
-  <span class="work-nav-line" aria-hidden="true"></span>
-  <small class="work-copyright" aria-label="Copyright">&copy; 2025</small>
+  <div class="page-overlay" aria-hidden="true"></div>
 
   <div class="work-layout">
 
-    <!-- Fixed left: intro panel -->
+    <!-- Sidebar: 69px fixed — HOME (vertical) + line + © 2025 (vertical) -->
+    <nav class="work-sidebar" aria-label="Site navigation">
+      <div class="sidebar-top">
+        <a href="index.html" class="sidebar-home-link">Home</a>
+        <span class="sidebar-line"></span>
+      </div>
+      <span class="sidebar-copy">© 2025</span>
+    </nav>
+
+    <!-- Left intro panel (fixed) -->
     <aside class="work-left" aria-label="Work introduction">
       <div class="work-left-content">
-        <h1 class="work-left-title">Work</h1>
-        <div class="work-left-desc">
-          <p>This is a showcase of my best work in a variety of fields including Graphic and Web Design, No-Code Development, Product Design and Product Management.</p>
-          <p>The world of digital design and development is constantly evolving and so has my role throughout my career.</p>
-        </div>
+        <p class="wl-label">Work</p>
+        <p class="wl-p1">This is a showcase of my best work in a variety <br> of fields including Graphic and Web Design, <br>No-Code Development, Product Design and <br>Product Management.</p>
+        <p class="wl-p2">The world of digital design and development <br> is  constantly evolving and so has my role <br> throughout my career.</p>
       </div>
     </aside>
 
-    <!-- Scrollable right: project list -->
+    <!-- Right: scrollable project list -->
     <main class="work-right" aria-label="Project showcase">
 
       <a href="work/ward.html" class="project-item">
-        <span class="project-tag">— Webflow Development</span>
         <span class="project-name">Ward</span>
+        <span class="project-tag">— Webflow Development</span>
       </a>
 
       <a href="work/superlink.html" class="project-item">
-        <span class="project-tag">— Framer Development</span>
         <span class="project-name">Superlink</span>
+        <span class="project-tag">— Framer Development</span>
       </a>
 
       <a href="work/okalpha.html" class="project-item">
-        <span class="project-tag">— Webflow Development</span>
         <span class="project-name">Okalpha</span>
+        <span class="project-tag">— Webflow Development</span>
       </a>
 
       <a href="work/karoo.html" class="project-item">
-        <span class="project-tag">— Webflow Development</span>
         <span class="project-name">Karoo</span>
+        <span class="project-tag">— Webflow Development</span>
       </a>
 
       <a href="work/studio.html" class="project-item">
-        <span class="project-tag">— Product Management</span>
         <span class="project-name">Studio</span>
+        <span class="project-tag">— Product Management</span>
       </a>
 
       <a href="work/margravine.html" class="project-item">
-        <span class="project-tag">— Design &amp; Webflow Development</span>
         <span class="project-name">Margravine</span>
+        <span class="project-tag">— Design &amp; Webflow Development</span>
       </a>
 
       <a href="work/cssco.html" class="project-item">
-        <span class="project-tag">— Product Development</span>
         <span class="project-name">Cssco</span>
+        <span class="project-tag">— Product Development</span>
       </a>
 
       <a href="work/yumyuck.html" class="project-item">
-        <span class="project-tag">— Photography &amp; Design</span>
         <span class="project-name">YumYuck</span>
+        <span class="project-tag">— Photography &amp; Design</span>
       </a>
 
     </main>
-
   </div>
 
   <script>
@@ -83,30 +85,39 @@
       var overlay = document.querySelector('.page-overlay');
       if (!overlay) return;
 
+      var OVERLAY_DURATION = 1000;
+
+      // Entry: beige slides up to reveal the dark page
       window.addEventListener('load', function () {
-        overlay.getBoundingClientRect();
         setTimeout(function () {
-          overlay.classList.remove('enter');
           overlay.classList.add('hidden');
-        }, 120);
+        }, 80);
+
+        // Stagger-reveal project items after overlay clears
         setTimeout(function () {
           overlay.style.pointerEvents = 'none';
-        }, 1400);
+          var items = document.querySelectorAll('.project-item');
+          items.forEach(function (item, i) {
+            setTimeout(function () {
+              item.classList.add('is-visible');
+            }, i * 60);
+          });
+        }, OVERLAY_DURATION + 80);
       });
 
+      // Exit: slide beige back down from top, then navigate
       document.querySelectorAll('a[href]').forEach(function (link) {
         var href = link.getAttribute('href');
-        if (!href || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('http')) return;
+        if (!href) return;
+        if (href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto')) return;
+        if (href === 'index.html' || href === './' || href === '../' || href === '../index.html') return;
 
         link.addEventListener('click', function (e) {
           e.preventDefault();
-          var dest = href;
           overlay.style.transition = 'transform 0.9s cubic-bezier(0.77, 0, 0.175, 1)';
           overlay.classList.remove('hidden');
-          overlay.classList.add('enter');
-          setTimeout(function () {
-            window.location.href = dest;
-          }, 950);
+          overlay.style.transform = 'translateY(0)';
+          setTimeout(function () { window.location.href = href; }, 950);
         });
       });
     })();

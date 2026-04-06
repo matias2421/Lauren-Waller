@@ -4,53 +4,141 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ward — Lauren Waller</title>
+  <meta name="description" content="A photographic and video portfolio website I built in Webflow for director and photographer, Paul Ward.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="work-detail.css">
 </head>
-<body>
-  <div class="page-overlay" aria-hidden="true"></div>
-  <div class="page-inner">
-    <header class="page-header">
-      <a href="work.html" class="page-header-back">Work</a>
-      <small class="page-header-copyright">&copy; 2025</small>
-    </header>
-    <section class="project-hero" aria-label="Project heading">
-      <h1 class="section-title section-title--lg">Ward</h1>
-      <p class="project-subtitle">Webflow development for Ward — a clean, modern website built with attention to detail and responsive design.</p>
-    </section>
-    <main>
-      <dl class="project-meta">
-        <div class="project-meta-item">
-          <dt class="project-meta-label">Role</dt>
-          <dd class="project-meta-value">Webflow Development</dd>
-        </div>
-        <div class="project-meta-item">
-          <dt class="project-meta-label">Responsibilities</dt>
-          <dd class="project-meta-value">Consultation, Webflow Setup, Development, Custom CSS, Animation, SEO, Launch</dd>
-        </div>
-        
-      </dl>
-      <article class="project-body prose">
-        <p>Ward is a project that showcases clean, modern web design principles built entirely in Webflow. The focus was on creating a visually appealing and highly functional website that performs well across all devices.</p><p>The development process involved careful attention to responsive design, custom CSS animations, and CMS integration to make the site easy to maintain by the client going forward.</p>
-      </article>
-      <div class="project-cta">
-        <a href="#" class="project-cta-link">Check it out</a>
+<body class="work-detail-page">
+
+  <div class="page-overlay enter" aria-hidden="true"></div>
+
+  <!-- Barra lateral -->
+  <div class="wd-sidebar">
+    <div class="wd-sidebar-inner">
+      <div class="wd-sidebar-work">
+        <a href="../work.html" class="wd-sidebar-work-link">WORK</a>
+        <span class="wd-sidebar-line"></span>
       </div>
-    </main>
-    <nav class="project-nav" aria-label="Project navigation">
-      <span></span>
-      <a href="superlink.html">Superlink &rsaquo;</a>
-    </nav>
+      <div class="wd-sidebar-copyright">
+        <small>&copy; 2025</small>
+      </div>
+    </div>
   </div>
+
+  <!-- Hero -->
+  <section class="wd-hero">
+    <h1 class="wd-title">Ward</h1>
+  </section>
+
+  <p class="wd-subtitle">
+    A photographic and video portfolio website I built in Webflow for director and photographer, Paul Ward.
+  </p>
+
+  <dl class="wd-meta">
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">Role</dt>
+      <dd class="wd-meta-value">Web Development</dd>
+    </div>
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">Responsibilities</dt>
+      <dd class="wd-meta-value">Consultation, Design (In collab with Daniel Ting Chong), Webflow Setup, Image Saving &amp; Optimisation, Webflow Development, Custom CSS, Animation, SEO, Launch</dd>
+    </div>
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">URL</dt>
+      <dd class="wd-meta-value">
+        <a href="https://ward.work" target="_blank" rel="noopener noreferrer">https://ward.work</a>
+      </dd>
+    </div>
+  </dl>
+
+  <div class="wd-media-hero">
+    <img src="https://framerusercontent.com/images/5bVQHTMIIzusUMwUu4DGN9YrAo.jpg" alt="Ward website hero">
+  </div>
+
+  <main class="wd-body">
+    <p>
+      This was a really fun, collaborative project between myself, <a href="https://ward.work/about" target="_blank" rel="noopener noreferrer">Paul Ward</a> and <a href="https://danieltingchong.com/" target="_blank" rel="noopener noreferrer">Daniel Ting Chong</a>: two very talented people I am lucky to call my friends. Daniel had been working on Paul's new brand identity and they were looking for someone to help create a website that had a little more personality than the usual photography portfolio templates you see out there. I naturally jumped at the opportunity to showcase Paul's beautiful video and photographic work behind his fresh, bold and edgy identity.
+    </p>
+    <p>
+      Paul came to the party with a really great outline of the website structure and after seeing some basic design explorations I started creating the CMS first as the intention was to make it really easy for Paul to update and edit his website going forward.
+    </p>
+  </main>
+
+  <div class="wd-image-full">
+    <img src="https://framerusercontent.com/images/j9FZ9YPQMC2Ipau9L9aIDBPxbSI.png" alt="Ward design 1">
+  </div>
+  <div class="wd-image-full">
+    <img src="https://framerusercontent.com/images/xjGezjuzczkNoKFIOCklBuc7THU.png" alt="Ward design 2">
+  </div>
+
+  <div class="wd-body">
+    <blockquote>
+      “I really enjoy being able to define the content management system structure of a website, systems are just my thing.”
+    </blockquote>
+    <p>
+      Paul was also so willing to do what was needed for the content, which was a dream to work with. He created 10 second clips of his best videos in no time and uploaded them to Vimeo for the home page carousel with auto-playing video backgrounds. His amazing content really made this website what it is.
+    </p>
+  </div>
+
+  <div class="wd-media-hero">
+    <video src="https://laurenwaller-portfolio.s3.eu-west-2.amazonaws.com/ward-video-1.mp4" loop autoplay muted playsinline style="width:100%;"></video>
+  </div>
+
+  <div class="wd-body">
+    <p>
+      I love an agile process, all three of us shared references with each other often, sent through quick designed ideas we had, Daniel bringing it all together in the end. I also started developing the site while the design was still in flux and the process was really fluid.
+    </p>
+  </div>
+
+  <div class="wd-image-full">
+    <img src="https://framerusercontent.com/images/dk4OyvNGZdq1OCH4wPV5L30yvc.png" alt="Ward detail 3">
+  </div>
+
+  <div class="wd-body">
+    <p>
+      Paul gave me a lot of rope and trusted my opinions and ideas, letting me play around with animations and generally just trusting me to go with it.
+    </p>
+    <p>All in all, a dream project.</p>
+  </div>
+
+  <div class="wd-image-full">
+    <img src="https://framerusercontent.com/images/JgjtqfeU3MczvopwyMlGXjZs3Y.jpg" alt="Ward detail 4">
+  </div>
+
+  <!-- CTA centrado con animación en scroll -->
+  <div class="wd-cta-wrapper">
+    <a href="https://ward.work" target="_blank" rel="noopener noreferrer" class="wd-cta-link" id="ctaButton">
+      Check it out
+      <img class="wd-cta-arrow" src="img/—Pngtree—white direction arrow right icon_4539096.png" title="flecha iconos" alt="">
+    </a>
+  </div>
+
+  <nav class="wd-nav" aria-label="Project navigation">
+    <span></span>
+    <a href="superlink.html">Superlink →</a>
+  </nav>
+
+  <script src="work-detail.js"></script>
   <script>
-    (function () {
-      var overlay = document.querySelector('.page-overlay');
-      if (!overlay) return;
-      overlay.offsetHeight;
-      setTimeout(function () { overlay.classList.add('hidden'); }, 100);
-      setTimeout(function () { overlay.style.pointerEvents = 'none'; }, 1400);
+    // Intersection Observer para animar el botón cada vez que entra en el viewport
+    (function() {
+      var btn = document.getElementById('ctaButton');
+      if (!btn) return;
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            btn.classList.add('visible');
+          } else {
+            btn.classList.remove('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(btn);
     })();
   </script>
 </body>

@@ -1,0 +1,442 @@
+/* =============================================
+   WORK DETAIL PAGES — Fiel a lauren-waller.com
+   ============================================= */
+
+/* ── Overlay (completamente desactivado) ── */
+.work-detail-page .page-overlay {
+  display: none;
+}
+
+/* ── Layout del detalle ── */
+.work-detail-page {
+  background-color: #ece7e1;
+  color: #1a1818;
+}
+
+/* =============================================
+   BARRA LATERAL
+   ============================================= */
+.wd-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 69px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.wd-sidebar-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  pointer-events: auto;
+}
+
+.wd-sidebar-work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wd-sidebar-work-link {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1a1818;
+  text-decoration: none;
+  transition: text-decoration 0.25s ease;
+}
+
+.wd-sidebar-work-link:hover {
+  text-decoration: underline;
+}
+
+.wd-sidebar-line {
+  width: 1px;
+  height: 80px;
+  background-color: #1a1818;
+  opacity: 0.35;
+}
+
+.wd-sidebar-copyright {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #1a1818;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .wd-sidebar { display: none; }
+}
+
+/* =============================================
+   HERO
+   ============================================= */
+.wd-hero {
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+  background-color: #1a1818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+  margin-left: 5%;
+  margin-right: 5%;
+  transform: translateY(-800px);
+  animation: wdHeroSpring 0.8s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes wdHeroSpring {
+  0% { transform: translateY(-800px); }
+  100% { transform: translateY(0); }
+}
+
+.wd-title {
+  font-family: "GrandSlang Roman", Georgia, serif;
+  font-size: clamp(5rem, 12vw, 12rem);
+  font-weight: 400;
+  text-transform: none;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: #ffffffea;
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  margin-top: 12rem;
+  opacity: 0.001;
+  transform: translateY(430px);
+  animation: wdTitleSpring 0.8s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  animation-delay: 1s;
+}
+
+@keyframes wdTitleSpring {
+  0% { opacity: 0.001; transform: translateY(430px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   SUBTÍTULO Y META
+   ============================================= */
+.wd-subtitle {
+  font-family: "GrandSlang Roman", Georgia, serif;
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #1a1818;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  text-align: left;
+  letter-spacing: 0;
+}
+
+.wd-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 32px;
+  padding: 0;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  text-align: left;
+}
+
+.wd-meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.wd-meta-label {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1a1818;
+}
+
+.wd-meta-value {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+  color: #1a1818;
+}
+
+.wd-meta-value a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.25s ease;
+}
+.wd-meta-value a:hover { opacity: 0.5; }
+
+/* =============================================
+   CUERPO DE TEXTO Y BLOQUE DE CITA
+   ============================================= */
+.wd-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+}
+
+.wd-body p {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+  color: #2a2a2a;
+  margin-bottom: 1.5rem;
+}
+.wd-body p:last-child { margin-bottom: 0; }
+.wd-body a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.25s ease;
+}
+.wd-body a:hover { opacity: 0.5; }
+
+.wd-body blockquote {
+  font-family: "GrandSlang Roman", Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #1a1818;
+  margin: 2rem 0 2.5rem;
+  padding: 0;
+  border: none;
+  max-width: 100%;
+  text-align: left;
+  letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+  .wd-body blockquote { font-size: 32px; margin: 2rem 0; }
+}
+@media (max-width: 480px) {
+  .wd-body blockquote { font-size: 28px; }
+}
+
+/* =============================================
+   IMÁGENES Y VÍDEOS (sin border-radius)
+   ============================================= */
+.wd-media-hero {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 2.5rem;
+}
+.wd-media-hero img,
+.wd-media-hero video,
+.wd-image-full img,
+.wd-image-full video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.wd-image-full {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem 2rem;
+}
+
+/* =============================================
+   BOTÓN CHECK IT OUT - CENTRADO, CON ANIMACIÓN EN SCROLL
+   ============================================= */
+.wd-cta-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 4rem;
+  text-align: center;
+}
+
+.wd-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "GrandSlang Roman", Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  background-color: #1a1818;
+  color: #ece7e1;
+  padding: 8px 12px 8px 28px;
+  border-radius: 60px;
+  border: none;
+  outline: none;
+  
+  /* Estado inicial oculto (para animación al hacer scroll) */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Clase que se añade cuando el botón entra en el viewport */
+.wd-cta-link.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wd-cta-link:hover {
+  transform: scale(1.02) translateY(-2px);
+}
+
+.wd-cta-arrow {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* Asegura que los trazos se hereden correctamente */
+.wd-cta-arrow path {
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+@media (max-width: 768px) {
+  .wd-cta-link { font-size: 22px; padding: 6px 10px 6px 22px; }
+  .wd-cta-arrow {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* =============================================
+   NAVEGACIÓN PREV / NEXT - SUBRAYADO EN HOVER
+   ============================================= */
+.wd-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wd-nav a {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a1818;
+  text-decoration: none;
+}
+.wd-nav a:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   VÍDEO DE YOUTUBE (centrado, ancho máximo 800px)
+   ============================================= */
+.wd-video-wrapper {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2.5rem;
+}
+
+.youtube-container {
+  position: relative;
+  width: 100%;
+  background-color: #000;
+  border-radius: 0;
+}
+
+.youtube-thumbnail {
+  position: relative;
+  cursor: pointer;
+}
+
+.youtube-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.youtube-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.youtube-play-btn:hover {
+  opacity: 0.8;
+}
+
+.youtube-iframe {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.youtube-iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .wd-video-wrapper {
+    padding: 0 1.5rem;
+  }
+}
+
+/* =============================================
+   RESPONSIVE GENERAL
+   ============================================= */
+@media (max-width: 768px) {
+  .wd-subtitle { font-size: 32px; padding: 0 1.5rem; }
+  .wd-meta { flex-direction: column; gap: 2rem; padding: 0 1.5rem; }
+  .wd-media-hero, .wd-image-full { padding: 0 1.5rem; }
+  .wd-image-full { padding-bottom: 1.5rem; }
+  .wd-body { padding: 3rem 1.5rem; }
+  .wd-cta-wrapper { padding: 1rem 1.5rem 3rem; }
+  .wd-nav { padding: 1.5rem; }
+  .wd-hero { transform: none; animation: none; }
+  .wd-title { opacity: 1; transform: none; animation: none; }
+}
+
+/* =============================================
+   SECTION HEADINGS (usados en páginas largas como Studio)
+   ============================================= */
+.wd-section-heading {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1a1818;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}

@@ -3,103 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cssco - Lauren Waller</title>
+  <title>Cssco — Lauren Waller</title>
   <meta name="description" content="A set of CSS photo filters inspired by VSCO, featured on Product Hunt.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="work-detail.css">
 </head>
-<body>
+<body class="work-detail-page">
 
-  <div class="page-overlay"></div>
+  <div class="page-overlay enter" aria-hidden="true"></div>
 
-  <div class="page-inner">
-
-    <!-- Header -->
-    <header class="page-header">
-      <a href="../work.html" class="page-header-back">Work</a>
-      <small class="page-header-copyright">&copy; 2025</small>
-    </header>
-
-    <!-- Hero -->
-    <section class="project-hero" aria-label="Project heading">
-      <h1 class="section-title section-title--lg">Cssco</h1>
-      <p class="project-subtitle">
-        I created a set of CSS photo filters inspired by VSCO and got featured
-        on Product Hunt.
-      </p>
-    </section>
-
-    <!-- Meta -->
-    <main>
-      <dl class="project-meta">
-        <div class="project-meta-item">
-          <dt class="project-meta-label">Role</dt>
-          <dd class="project-meta-value">Creator, Designer, Developer</dd>
-        </div>
-        <div class="project-meta-item">
-          <dt class="project-meta-label">Responsibilities</dt>
-          <dd class="project-meta-value">Everything. An idea I developed from start to finish on my own.</dd>
-        </div>
-        <div class="project-meta-item">
-          <dt class="project-meta-label">URL</dt>
-          <dd class="project-meta-value"><a href="https://github.com/laurenwaller/cssco" target="_blank" rel="noopener">https://github.com/laurenwaller/cssco</a></dd>
-        </div>
-      </dl>
-
-      <!-- Body -->
-      <article class="project-body prose">
-        <p>
-          CSSCO is a library of photographic filters made with CSS, inspired by
-          <a href="#">VSCO</a> and <a href="#">CSSgram</a>. It was made for designers
-          and is a tool for adding VSCO-like filters to photographs using code.
-        </p>
-        <blockquote>
-          Instead of having to use external photo editing tools like Photoshop or VSCO,
-          you can grade your photographs in the browser.
-        </blockquote>
-        <p>
-          CSSCO was one of those ideas that I couldn't stop thinking about and I jumped
-          into figuring it out as fast as I could. If you're a front-end developer,
-          designer or photographer &ndash; try it out, I would love to know what you think.
-        </p>
-        <p>
-          Seeing this idea through to the end reaped its rewards. With the help of friend
-          and colleague <a href="#">Shawn Roos</a>, I submitted CSSCO to Product Hunt in
-          2016 and was lucky enough to get <a href="#">featured</a>, allowing it to reach
-          many of the popular web design blogs, and hundreds of influential people on Twitter.
-        </p>
-        <p>
-          After the feature on Product Hunt, CSSCO was tweeted by the likes of Sidebar,
-          Marvel, PetaPixel and Speckyboy. My repo trended on Github that week, accumulating
-          over 700 stars and eventually got added to <a href="#">cdnjs</a>.
-        </p>
-      </article>
-
-      <!-- CTA -->
-      <div class="project-cta">
-        <a href="https://github.com/laurenwaller/cssco" target="_blank" rel="noopener" class="project-cta-link">Check it out</a>
+  <!-- Barra lateral -->
+  <div class="wd-sidebar">
+    <div class="wd-sidebar-inner">
+      <div class="wd-sidebar-work">
+        <a href="../work.html" class="wd-sidebar-work-link">WORK</a>
+        <span class="wd-sidebar-line"></span>
       </div>
-    </main>
-
-    <!-- Prev / Next -->
-    <nav class="project-nav" aria-label="Project navigation">
-      <a href="margravine.html">&lsaquo; Margravine</a>
-      <a href="yumyuck.html">YumYuck &rsaquo;</a>
-    </nav>
-
+      <div class="wd-sidebar-copyright">
+        <small>&copy; 2025</small>
+      </div>
+    </div>
   </div>
 
+  <!-- Hero -->
+  <section class="wd-hero">
+    <h1 class="wd-title">Cssco</h1>
+  </section>
+
+  <p class="wd-subtitle">
+    I created a set of CSS photo filters inspired by VSCO and got featured on Product Hunt.
+  </p>
+
+  <dl class="wd-meta">
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">Role</dt>
+      <dd class="wd-meta-value">Creator, Designer, Developer</dd>
+    </div>
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">Responsibilities</dt>
+      <dd class="wd-meta-value">Everything. An idea I developed from start to finish on my own.</dd>
+    </div>
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">URL</dt>
+      <dd class="wd-meta-value">
+        <a href="https://github.com/laurenwaller/cssco" target="_blank" rel="noopener noreferrer">https://github.com/laurenwaller/cssco</a>
+      </dd>
+    </div>
+  </dl>
+
+  <!-- Hero image -->
+  <div class="wd-media-hero">
+    <img src="https://framerusercontent.com/images/dyrLrtfpLD8OpBeSZsX6JJXesI.jpg" alt="Cssco hero">
+  </div>
+
+  <div class="wd-body">
+    <p>
+      CSSCO is a library of photographic filters made with CSS, inspired by <a href="https://vsco.co/" target="_blank" rel="noopener noreferrer">VSCO</a> and <a href="https://una.im/CSSgram/" target="_blank" rel="noopener noreferrer">CSSgram</a>. It was made for designers and is a tool for adding VSCO-like filters to photographs using code.
+    </p>
+    <blockquote>
+      Instead of having to use external photo editing tools like Photoshop or VSCO, you can grade your photographs in the browser.
+    </blockquote>
+  </div>
+
+  <!-- Imagen de demostración de filtros -->
+  <div class="wd-image-full">
+    <img src="https://framerusercontent.com/images/P4cHkhzuAGxjMVm2xmTTc7TbM.png" alt="Cssco filters demo">
+  </div>
+
+  <!-- Vídeo de escritorio -->
+  <div class="wd-media-hero">
+    <video src="https://laurenwaller-portfolio.s3.eu-west-2.amazonaws.com/cssco-desktop.mp4" loop autoplay muted playsinline style="width:100%;"></video>
+  </div>
+
+  <div class="wd-body">
+    <p>
+      CSSCO was one of those ideas that I couldn't stop thinking about and I jumped into figuring it out as fast as I could. If you’re a front-end developer, designer or photographer – try it out, I would love to know what you think.
+    </p>
+    <p>
+      Seeing this idea through to the end reaped its rewards. With the help of friend and colleague <a href="https://maketh.co.za/@shawnroos" target="_blank" rel="noopener noreferrer">Shawn Roos</a>, I submitted CSSCO to Product Hunt in 2016 and was lucky enough to get <a href="https://www.producthunt.com/tech/cssco" target="_blank" rel="noopener noreferrer">featured</a>, allowing it to reach many of the popular web design blogs, and hundreds of influential people on Twitter.
+    </p>
+  </div>
+
+  <!-- Imagen adicional -->
+  <div class="wd-image-full">
+    <img src="https://framerusercontent.com/images/4Fx5GBWrnY8doq7C2ihknGbY.png" alt="Cssco product hunt">
+  </div>
+  <div class="wd-image-full">
+    <img src="https://framerusercontent.com/images/5ioWSnaY4PPAiYU9wPT3qNkKZ40.png" alt="Cssco cdnjs">
+  </div>
+
+  <!-- Botón CTA -->
+  <div class="wd-cta-wrapper">
+    <a href="https://github.com/laurenwaller/cssco" target="_blank" rel="noopener noreferrer" class="wd-cta-link" id="ctaButton">
+      Check it out
+      <img class="wd-cta-arrow" src="img/—Pngtree—white direction arrow right icon_4539096.png" title="flecha iconos" alt="">
+    </a>
+  </div>
+
+  <!-- Navegación prev / next -->
+  <nav class="wd-nav" aria-label="Project navigation">
+    <a href="margravine.html">← Margravine</a>
+    <a href="yumyuck.html">YumYuck →</a>
+  </nav>
+
+  <script src="work-detail.js"></script>
   <script>
     (function() {
-      var overlay = document.querySelector('.page-overlay');
-      if (!overlay) return;
-      overlay.offsetHeight;
-      setTimeout(function() { overlay.classList.add('hidden'); }, 100);
-      setTimeout(function() { overlay.style.pointerEvents = 'none'; }, 1400);
+      var btn = document.getElementById('ctaButton');
+      if (!btn) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { btn.classList.add('visible'); }
+          else { btn.classList.remove('visible'); }
+        });
+      }, { threshold: 0.2 });
+      observer.observe(btn);
     })();
   </script>
-
 </body>
 </html>

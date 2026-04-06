@@ -3,117 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Superlink - Lauren Waller</title>
-  <meta name="description" content="A website built in Framer for Superlink, a domain name startup changing the world.">
+  <title>Superlink — Lauren Waller</title>
+  <meta name="description" content="A website built in Framer for Superlink – a domain name startup changing the world.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="work-detail.css">
 </head>
-<body>
+<body class="work-detail-page">
 
-  <div class="page-overlay"></div>
+  <div class="page-overlay enter" aria-hidden="true"></div>
 
-  <div class="page-inner">
-
-    <!-- Header -->
-    <header class="page-header">
-      <a href="../work.html" class="page-header-back">Work</a>
-      <small class="page-header-copyright">&copy; 2025</small>
-    </header>
-
-    <!-- Hero -->
-    <section class="project-hero" aria-label="Project heading">
-      <h1 class="section-title section-title--lg">Superlink</h1>
-      <p class="project-subtitle">
-        A website built in Framer for Superlink &ndash; a domain name startup
-        changing the world.
-      </p>
-    </section>
-
-    <!-- Meta -->
-    <main>
-      <dl class="project-meta">
-        <div class="project-meta-item">
-          <dt class="project-meta-label">Role</dt>
-          <dd class="project-meta-value">Framer Development and Consultation</dd>
-        </div>
-        <div class="project-meta-item">
-          <dt class="project-meta-label">Responsibilities</dt>
-          <dd class="project-meta-value">Framer Consultation, Frontend Framer Setup, React Component Styling, Dynamic Landing Pages, Custom CMS, Animation</dd>
-        </div>
-        <div class="project-meta-item">
-          <dt class="project-meta-label">URL</dt>
-          <dd class="project-meta-value"><a href="https://superlink.me" target="_blank" rel="noopener">https://superlink.me</a></dd>
-        </div>
-      </dl>
-
-      <!-- Body -->
-      <article class="project-body prose">
-        <p>
-          An ex-CEO of mine <a href="#">Matt Winn</a> approached me about helping with
-          building a website for his new startup idea, Superlink. I recommended they use
-          Framer for the marketing website because I think Framer is the perfect website
-          builder for startups that need to move fast and iterate on what they're offering
-          as a product or service.
-        </p>
-        <p>
-          The website and brand was designed by <a href="#">Hunter Thompson</a> and lucky
-          for me I got to setup and build a really beautiful site.
-        </p>
-        <p>
-          My role in this project was to setup the Framer site focusing on the home page
-          and building out some other components for various aspects of the rest of the site.
-        </p>
-        <p>
-          The home page included some really fun animations which took me some time to get
-          right! But I think we nailed it in the end. Especially this hero scroll animation.
-        </p>
-        <p>
-          Initially the idea was to use Framer only for the marketing side of the website
-          (home page, about etc) and <a href="#">Henry</a> from the Superlink team would
-          build the actual flow of searching and purchasing domain names in a separate
-          framework. However, after starting in Framer and trying out React Components they
-          decided to integrate their entire service inside Framer! They were complete converts.
-        </p>
-        <p>
-          I never expected to see the Superlink team integrate their entire site (from searching
-          domain names to purchasing) in Framer using React Components. It was wild!
-        </p>
-        <p>
-          I ended up having to do some custom code inside the React Components for styling
-          aspects of the results page, which was a challenge but a great learning experience.
-          Huge thanks to <a href="#">Henry Kelder</a> for helping me with that.
-        </p>
-        <p>
-          As always it was built to be fully responsive because let's be honest, most people
-          are on their phones these days. It's a mobile-first world.
-        </p>
-      </article>
-
-      <!-- CTA -->
-      <div class="project-cta">
-        <span class="sub-title">Check it out</span>
+  <div class="wd-sidebar">
+    <div class="wd-sidebar-inner">
+      <div class="wd-sidebar-work">
+        <a href="../work.html" class="wd-sidebar-work-link">WORK</a>
+        <span class="wd-sidebar-line"></span>
       </div>
-    </main>
-
-    <!-- Prev / Next -->
-    <nav class="project-nav" aria-label="Project navigation">
-      <a href="ward.html">&lsaquo; Ward</a>
-      <a href="okalpha.html">Okalpha &rsaquo;</a>
-    </nav>
-
+      <div class="wd-sidebar-copyright">
+        <small>&copy; 2025</small>
+      </div>
+    </div>
   </div>
 
+  <section class="wd-hero">
+    <h1 class="wd-title">Superlink</h1>
+  </section>
+
+  <p class="wd-subtitle">
+    A website built in Framer for Superlink – a domain name startup changing the world.
+  </p>
+
+  <dl class="wd-meta">
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">Role</dt>
+      <dd class="wd-meta-value">Framer Development and Consultation</dd>
+    </div>
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">Responsibilities</dt>
+      <dd class="wd-meta-value">Framer Consultation, Frontend Framer Setup, React Component Styling, Dynamic Landing Pages, Custom CMS, Animation.</dd>
+    </div>
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">URL</dt>
+      <dd class="wd-meta-value">
+        <a href="https://superlink.me" target="_blank" rel="noopener noreferrer">https://superlink.me</a>
+      </dd>
+    </div>
+  </dl>
+
+  <div class="wd-media-hero">
+    <img src="img/Dpt3XiRO2dMrBV3LXmPb0nbFw2Q.avif" alt="Superlink website hero">
+  </div>
+
+  <main class="wd-body">
+    <p>
+      An ex-CEO of mine <a href="https://twitter.com/mattwinn" target="_blank" rel="noopener noreferrer">Matt Winn</a> approached me about helping with building a website for his new startup idea, Superlink. I recommended they use Framer for the marketing website because I think Framer is the perfect website builder for startups that need to move fast and iterate on what they're offering as a product or service. (Side note: If you're thinking about using Framer but have questions, hit me up).
+    </p>
+    <p>
+      The website and brand was designed by <a href="https://www.huntert.com/" target="_blank" rel="noopener noreferrer">Hunter Thompson</a> and lucky for me I got to setup and build a really beautiful site.
+    </p>
+  </main>
+
+  <div class="wd-image-full">
+    <img src="img/0mBcuN1jTVN4tKEHAV90UBoKeuQ.avif" alt="Superlink design 1">
+  </div>
+
+  <div class="wd-body">
+    <p>
+      My role in this project was to setup the Framer site focusing on the home page and building out some other components for various aspects of the rest of the site.
+    </p>
+  </div>
+
+  <div class="wd-image-full">
+    <img src="img/8Aoyg85nUDh1syOS8cCplDkamE.avif" alt="Superlink design 2">
+  </div>
+
+  <div class="wd-media-hero">
+    <video src="https://laurenwaller-portfolio.s3.eu-west-2.amazonaws.com/superlink-video.mp4" loop autoplay muted playsinline style="width:100%;"></video>
+  </div>
+
+  <div class="wd-body">
+    <p>
+      The home page included some really fun animations which took me some time to get right! But I think we nailed it in the end. Especially this hero scroll animation.
+    </p>
+    <p>
+      Initially the idea was to use Framer only for the marketing side of the website (home page, about etc) and <a href="https://www.linkedin.com/in/henry-kelder-212321a4/" target="_blank" rel="noopener noreferrer">Henry</a> from the Superlink team would build the actual flow of searching and purchasing domain names in a separate framework. However, after starting in Framer and trying out React Components they decided to integrate their entire service inside Framer! They were complete converts.
+    </p>
+    <blockquote>
+      "I never expected to see the Superlink team integrate their entire site (from searching domain names to purchasing) in Framer using React Components. It was wild!"
+    </blockquote>
+    <p>
+      I ended up having to do some custom code inside the React Components for styling aspects of the results page, which was a challenge but a great learning experience. Huge thanks to <a href="https://www.linkedin.com/in/henry-kelder-212321a4/" target="_blank" rel="noopener noreferrer">Henry Kelder</a> for helping me with that.
+    </p>
+  </div>
+
+  <div class="wd-image-full">
+    <img src="img/Noc2oTT482hv072CGmKNlfc5I4.avif" alt="Superlink mobile view">
+  </div>
+
+  <div class="wd-body">
+    <p>
+      As always it was built to be fully responsive because let's be honest, most people are on their phones these days. It's a mobile-first world.
+    </p>
+  </div>
+
+  <div class="wd-image-full">
+    <img src="img/10cvgIkrcCyZvgeAcHkRasEk3k.avif" alt="Superlink responsive">
+  </div>
+
+  <div class="wd-cta-wrapper">
+    <a href="https://superlink.me" target="_blank" rel="noopener noreferrer" class="wd-cta-link" id="ctaButton">
+      Check it out
+      <img class="wd-cta-arrow" src="img/—Pngtree—white direction arrow right icon_4539096.png" title="flecha iconos" alt="">
+    </a>
+  </div>
+
+  <nav class="wd-nav" aria-label="Project navigation">
+    <a href="ward.html">← Ward</a>
+    <a href="okalpha.html">Okalpha →</a>
+  </nav>
+
+  <script src="work-detail.js"></script>
   <script>
     (function() {
-      var overlay = document.querySelector('.page-overlay');
-      if (!overlay) return;
-      overlay.offsetHeight;
-      setTimeout(function() { overlay.classList.add('hidden'); }, 100);
-      setTimeout(function() { overlay.style.pointerEvents = 'none'; }, 1400);
+      var btn = document.getElementById('ctaButton');
+      if (!btn) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { btn.classList.add('visible'); }
+          else { btn.classList.remove('visible'); }
+        });
+      }, { threshold: 0.2 });
+      observer.observe(btn);
     })();
   </script>
-
 </body>
 </html>

@@ -9,7 +9,6 @@
   font-weight: 400;
 }
 
-
 /* =============================================
    RESET & BASE
    ============================================= */
@@ -45,9 +44,8 @@ img {
   display: block;
 }
 
-
 /* =============================================
-   PAGE TRANSITION OVERLAY
+   PAGE TRANSITION OVERLAY (CORREGIDO: sube hacia arriba)
    ============================================= */
 .page-overlay {
   position: fixed;
@@ -60,82 +58,142 @@ img {
 }
 
 .page-overlay.hidden {
-  transform: translateY(100%);
+  transform: translateY(-100%);  /* Se desliza hacia arriba */
 }
 
+/* Overlay específico para la página de contacto (fondo claro) */
+.contact-page .page-overlay {
+  background-color: #ece7e1;
+}
 
 /* =============================================
    KEYFRAME ANIMATIONS
    ============================================= */
-
-/* Blur fade-in — used for large display text (nav, contact heading) */
 @keyframes fadeInBlur {
-  from {
-    opacity: 0;
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-  }
+  from { opacity: 0; filter: blur(10px); }
+  to   { opacity: 1; filter: blur(0); }
 }
 
-/* Slide-up fade-in — used for body content sections */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Home page entrance — subtle upward drift for bio/card/nav elements */
 @keyframes homeEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes navFadeUp {
+  0%   { opacity: 0; filter: blur(8px); translate: 0 24px; }
+  100% { opacity: 1; filter: blur(0);   translate: 0 0; }
+}
+
+@keyframes templateCardEnter {
+  0%   { opacity: 0.001; transform: translateY(-210px); }
+  100% { opacity: 1;     transform: translateY(0); }
+}
+
+@keyframes workFadeIn {
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+@keyframes aboutTitleSpring {
+  0% { opacity: 0.001; transform: translateY(430px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aboutImageSpring {
+  0% { opacity: 0.001; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Animación spring para "Hello." (contacto) */
+@keyframes helloSpring {
+  0% {
+    opacity: 0.001;
+    transform: translateY(430px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Animación para el nav - usando translate (propiedad independiente) */
-@keyframes navFadeUp {
+/* Animación para el párrafo y la info de contacto (fade + blur + subida) */
+@keyframes contactFadeUp {
   0% {
-    opacity: 0;
-    filter: blur(8px);
-    translate: 0 24px;
+    opacity: 0.001;
+    filter: blur(10px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
     filter: blur(0);
-    translate: 0 0;
-  }
-}
-
-/* Animación de entrada para el template card */
-@keyframes templateCardEnter {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
     transform: translateY(0);
   }
 }
-
 
 /* =============================================
-   HOME — ANIMACIONES DE ENTRADA
+   HOME PAGE
    ============================================= */
+.bio-section {
+  position: absolute;
+  left: 10.8rem;
+  bottom: 13%;
+  z-index: 5;
+  max-width: 380px;
+}
 
-/* bio-section: invisible hasta que JS añada .is-visible */
+.bio-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.bio-name {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: #1a1818;
+  margin: 0;
+}
+
+.bio-text {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 380;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+  color: #2a2a2a;
+  margin: 0;
+}
+
+.bio-text a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  transition: text-decoration 0.3s cubic-bezier(0.44, 0, 0.56, 1);
+}
+
+.bio-text a:hover {
+  text-decoration: line-through;
+}
+
+.bio-role {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+  color: #2a2a2a;
+  margin: 0;
+}
+
 .bio-section-enter {
   opacity: 0;
   transform: translateY(12px);
@@ -144,55 +202,18 @@ img {
   animation: homeEntrance 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-/* nav-giant-link */
-.nav-giant-link {
-  font-family: "GrandSlang Roman", Georgia, serif;
-  font-size: clamp(4rem, 9vw, 11rem);
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #1a1818;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  display: block;
-  white-space: nowrap;
-  transform-origin: bottom left;
-  padding: 0.08em 0;
-  
-  /* Estado inicial */
-  opacity: 0;
-  filter: blur(8px);
-  translate: 0 24px;
-}
-
-/* Cuando JS añade la clase, se activa la animación de entrada */
-.nav-giant-link.is-visible {
-  animation: navFadeUp 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-/* Estado normal - transición de SALIDA (con rebote sutil) */
-.nav-giant-link.is-visible {
-  transition: transform 0.33s cubic-bezier(0.2, 0.9, 0.4, 1.4);
-}
-
-/* Hover - transición de ENTRADA (más lenta y suave) */
-.nav-giant-link.is-visible:hover {
-  transform: translateX(8px) skewX(-14deg);
-  transition: transform 0.32s cubic-bezier(0.44, 0, 0.56, 1);
-}
-
-/* Template card wrapper - animación de entrada */
+/* Template Card */
 .template-card-wrapper {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
   z-index: 20;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: templateCardEnter 0.8s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
-  animation-delay: 1.6s;
+  opacity: 0.001;
+  transform: translateY(-210px);
+  animation: templateCardEnter 1s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  animation-delay: 2s;
 }
 
-/* Template card */
 .template-card {
   background-color: #1a1818;
   color: #fff;
@@ -207,7 +228,6 @@ img {
   overflow: hidden;
 }
 
-/* Hover: la imagen se escala y el título se subraya */
 .template-card:hover .template-card-slideshow {
   transform: scale(0.93);
   transition: transform 0.2s cubic-bezier(0.44, 0, 0.56, 1);
@@ -216,7 +236,6 @@ img {
 .template-card:hover .template-card-title {
   text-decoration: underline;
   text-underline-offset: 4px;
-  transition: text-decoration 0.4s cubic-bezier(0.44, 0, 0.56, 1);
 }
 
 .template-card-images {
@@ -230,7 +249,6 @@ img {
   margin-left: -1px;
 }
 
-/* Slideshow container - carrusel horizontal */
 .template-card-slideshow {
   width: 100%;
   height: 100%;
@@ -295,163 +313,47 @@ img {
   color: rgba(255, 255, 255, 0.774);
   display: block;
 }
-/* Mobile: todo visible de inmediato, sin animación */
-@media (max-width: 768px) {
-  .bio-section-enter        { opacity: 1; transform: none; }
-  .bio-section-enter.is-visible { animation: none; }
-  .nav-giant-link           { opacity: 1; filter: none; translate: none; transform: none; animation: none; }
-  .nav-giant-link.is-visible { opacity: 1; filter: none; translate: none; transform: none; animation: none; }
-  .nav-giant-link.is-visible:hover { transform: none; transition: none; }
-  
-  .template-card-wrapper {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin-bottom: 2rem;
-    max-width: 100%;
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-  
-  .template-card {
-    max-width: 100%;
-  }
-  
-  .template-card:hover .template-card-slideshow,
-  .template-card:hover .template-card-img {
-    transform: none;
-  }
+
+/* Navegación Principal (Nav Giant) */
+.nav-giant {
+  position: absolute;
+  top: 50%;
+  left: 61%;
+  transform: translate(-35%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
 }
 
-
-/* =============================================
-   SHARED TYPOGRAPHY
-   ============================================= */
-.section-title {
+.nav-giant-link {
   font-family: "GrandSlang Roman", Georgia, serif;
+  font-size: clamp(4rem, 9vw, 11rem);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 1;
   color: #1a1818;
-}
-
-.section-title--lg { font-size: clamp(3rem, 8vw, 8rem); }
-.section-title--md { font-size: clamp(2rem, 5vw, 4.5rem); }
-.section-title--sm { font-size: clamp(1.5rem, 3vw, 2.5rem); }
-
-.sub-title {
-  font-family: "Inter", sans-serif;
-  font-weight: 900;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  color: #1a1818;
-}
-
-/* Prose — long-form content */
-.prose {
-  max-width: 700px;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: #2a2a2a;
-}
-
-.prose p { margin-bottom: 1.5rem; }
-
-.prose a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: opacity 0.3s ease;
-}
-
-.prose a:hover { opacity: 0.6; }
-
-.prose blockquote {
-  font-family: "GrandSlang Roman", Georgia, serif;
-  font-size: clamp(1.3rem, 2.5vw, 2.2rem);
-  line-height: 1.3;
-  color: #1a1818;
-  padding: 2rem 0;
-  border-top: 1px solid #c8c3bb;
-  border-bottom: 1px solid #c8c3bb;
-  margin: 2.5rem 0;
-}
-
-.prose ul {
-  list-style: disc;
-  padding-left: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-
-.prose li { line-height: 1.8; }
-
-
-/* =============================================
-   SHARED INNER-PAGE LAYOUT
-   ============================================= */
-.page-inner {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-}
-
-/* Fixed header */
-.page-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  z-index: 50;
-  pointer-events: none;
-}
-
-.page-header a,
-.page-header small {
-  pointer-events: auto;
-}
-
-.page-header-back {
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  transition: opacity 0.3s ease;
-}
-
-.page-header-back:hover { opacity: 0.5; }
-
-.page-header-copyright {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-}
-
-/* Page hero — the large title area on inner pages */
-.page-hero {
-  padding: 8rem 2rem 3rem;
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+  display: block;
+  white-space: nowrap;
+  transform-origin: bottom left;
+  padding: 0.08em 0;
   opacity: 0;
-  animation: fadeInUp 0.7s ease forwards 0.4s;
+  filter: blur(8px);
+  translate: 0 24px;
 }
 
-
-/* =============================================
-   HOME PAGE
-   ============================================= */
-.page {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+.nav-giant-link.is-visible {
+  animation: navFadeUp 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transition: transform 0.33s cubic-bezier(0.2, 0.9, 0.4, 1.4);
 }
 
-/* Social icons — left column */
+.nav-giant-link.is-visible:hover {
+  transform: translateX(8px) skewX(-14deg);
+  transition: transform 0.32s cubic-bezier(0.44, 0, 0.56, 1);
+}
+
+/* Columna Social */
 .social-column {
   position: absolute;
   top: 1.75rem;
@@ -471,13 +373,8 @@ img {
   height: 28px;
   transition: opacity 0.3s ease;
 }
-
 .social-icon:hover { opacity: 0.5; }
-
-.social-icon svg {
-  width: 22px;
-  height: 22px;
-}
+.social-icon svg { width: 22px; height: 22px; }
 
 .social-line {
   display: block;
@@ -487,7 +384,6 @@ img {
   margin-top: 0.25rem;
 }
 
-/* Copyright */
 .copyright-vertical {
   position: fixed;
   bottom: 1.75rem;
@@ -499,403 +395,389 @@ img {
   z-index: 10;
 }
 
-/* Bio */
-.bio-section {
-  position: absolute;
-  left: 5rem;
-  bottom: 14%;
-  max-width: 380px;
-  z-index: 5;
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
-
-.bio-name {
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
-  margin-bottom: 1.1rem;
-  text-transform: uppercase;
-}
-
-.bio-text {
-  font-size: 0.875rem;
-  line-height: 1.65;
-  color: #2a2a2a;
-}
-
-.bio-text a {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  transition: opacity 0.3s ease;
-}
-
-.bio-text a:hover { opacity: 0.6; }
-
-.bio-role {
-  margin-top: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.65;
-  color: #2a2a2a;
-}
-
-/* Giant navigation */
-.nav-giant {
-  position: absolute;
-  top: 52%;
-  left: 59%;
-  transform: translate(-35%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  z-index: 1;
-}
-
 
 /* =============================================
    WORK PAGE — DARK THEME
    ============================================= */
 .work-page {
-  background-color: #111010;
+  background-color: #1a1818;
   color: #ece7e1;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* Overlay: enters from bottom as cream, exits upward */
 .work-page .page-overlay {
   background-color: #ece7e1;
-  transform: translateY(100%);
+  transform: translateY(0);
 }
-
-.work-page .page-overlay.enter  { transform: translateY(0); }
 .work-page .page-overlay.hidden { transform: translateY(-100%); }
 
-/* Two-column layout */
 .work-layout {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
+  min-height: 100vh;
 }
 
-/* Fixed left panel */
-.work-left {
+/* Sidebar (69px) */
+.work-sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 42%;
+  width: 69px;
+  height: 100vh;
+  background-color: #1a1818;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 8px 50px;
+  z-index: 50;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.sidebar-home-link {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ece7e1;
+  text-decoration: none;
+  white-space: nowrap;
+  /* Se eliminó transition: opacity 0.25s ease; */
+}
+
+.sidebar-home-link:hover {
+  text-decoration: underline; /* Subrayado en lugar de opacidad */
+}
+
+.sidebar-line {
+  display: block;
+  width: 1px;
+  height: 100px;
+  background-color: #ece7e1;
+  opacity: 0.55;
+}
+
+.sidebar-copy {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #ece7e1;
+  opacity: 0.5;
+  white-space: nowrap;
+}
+
+/* Left panel */
+.work-left {
+  position: fixed;
+  top: 0;
+  left: 69px;
+  width: calc(39% - 69px);
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 4rem 3rem 4rem 5rem;
+  justify-content: flex-end;
+  padding: 0 0 150px 120px;
   z-index: 10;
   pointer-events: none;
 }
 
-/* Home link */
-.work-nav-home {
-  position: fixed;
-  top: 0;
-  left: 0;
-  writing-mode: vertical-rl;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #ece7e1;
-  padding: 1.5rem 0.9rem;
-  z-index: 50;
-  transition: opacity 0.3s ease;
-}
-
-.work-nav-home:hover { opacity: 0.45; }
-
-/* Vertical accent line */
-.work-nav-line {
-  position: fixed;
-  top: 6rem;
-  left: 2.35rem;
-  width: 1px;
-  height: 110px;
-  background-color: #ece7e1;
-  opacity: 0.35;
-  z-index: 40;
-}
-
-/* Copyright */
-.work-copyright {
-  position: fixed;
-  bottom: 1.75rem;
-  left: 1.75rem;
-  writing-mode: vertical-rl;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: #ece7e1;
-  opacity: 0.45;
-  z-index: 40;
-}
-
 .work-left-content {
-  opacity: 0;
-  animation: fadeInUp 0.7s ease forwards 1.4s;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 400px;
+  width: 100%;
 }
 
-.work-left-title {
-  font-weight: 900;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+.wl-label {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: #ece7e1;
-  margin-bottom: 1.75rem;
+  opacity: 0.001;
+  filter: blur(10px);
+  transform: translateY(-20px);
+  animation: workFadeIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 1.25s;
 }
 
-.work-left-desc {
-  font-size: 0.9rem;
-  line-height: 1.75;
-  color: rgba(236, 231, 225, 0.65);
-  max-width: 340px;
+.wl-p1 {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color: #ece7e1;
+  opacity: 0.001;
+  filter: blur(10px);
+  transform: translateY(-20px);
+  animation: workFadeIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 1.45s;
 }
 
-.work-left-desc p + p { margin-top: 1.1rem; }
+.wl-p2 {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color: #ece7e1;
+  opacity: 0.001;
+  filter: blur(10px);
+  transform: translateY(-20px);
+  animation: workFadeIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 1.6s;
+}
 
-/* Scrollable right panel */
+/* Right panel */
 .work-right {
-  margin-left: 42%;
-  width: 58%;
-  height: 100vh;
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(236, 231, 225, 0.25) transparent;
-  padding: 12vh 4rem 12vh 2rem;
+  margin-left: 47%;
+  width: 61%;
+  min-height: 100vh;
+  padding: 150px 80px 150px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.work-right::-webkit-scrollbar        { width: 4px; }
-.work-right::-webkit-scrollbar-track  { background: transparent; }
-.work-right::-webkit-scrollbar-thumb  {
-  background-color: rgba(236, 231, 225, 0.25);
-  border-radius: 2px;
-}
-
-/* Project list items */
 .project-item {
-  display: block;
-  padding: 0.6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .project-name {
   font-family: "GrandSlang Roman", Georgia, serif;
-  font-size: clamp(4rem, 8vw, 9.5rem);
+  font-size: clamp(3.5rem, 7vw, 12rem);
   font-weight: 400;
   text-transform: uppercase;
   color: #ece7e1;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  display: block;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  display: inline-block;
   transform-origin: bottom left;
-
-  /* Estado inicial */
-  opacity: 0;
-  filter: blur(6px);
-  transform: translateY(20px);
-
+  opacity: 0.001;
+  filter: blur(10px);
+  transform: translateY(-20px);
   transition:
-    opacity   0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    filter    0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity   0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter    0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.33s cubic-bezier(0.2, 0.9, 0.4, 1.4);
 }
 
-/* JS añade .is-visible al .project-item — se propaga al hijo */
 .project-item.is-visible .project-name {
   opacity: 1;
   filter: blur(0);
   transform: translateY(0);
 }
 
-/* Hover: translateX + skew, sin opacity en el texto */
 .project-item.is-visible:hover .project-name {
-  transform: translateY(0) translateX(10px) skewX(-12deg);
+  transform: translateX(8px) skewX(-14deg);
+  transition:
+    opacity   0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter    0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.32s cubic-bezier(0.44, 0, 0.56, 1);
 }
 
 .project-tag {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  color: rgba(236, 231, 225, 0.4);
-  margin-bottom: 0.3rem;
-  display: block;
-  transition: color 0.3s ease;
+  color: #ece7e1;
+  opacity: 0.001;
+  filter: blur(10px);
+  transform: translateY(-20px);
+  transition:
+    opacity   0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter    0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.project-item:hover .project-tag {
-  color: rgba(236, 231, 225, 0.7);
+.project-item.is-visible .project-tag {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
 }
-
 
 /* =============================================
-   PROJECT DETAIL PAGES
+   SHARED TYPOGRAPHY & INNER PAGES
    ============================================= */
-.project-hero {
-  padding: 8rem 2rem 2rem;
-  opacity: 0;
-  animation: fadeInUp 0.7s ease forwards 0.4s;
-}
-
-.project-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #2a2a2a;
-  max-width: 650px;
-  margin-top: 1.5rem;
-}
-
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  padding: 2rem 2rem 3rem;
-  opacity: 0;
-  animation: fadeInUp 0.5s ease forwards 0.6s;
-}
-
-.project-meta-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.project-meta-label {
-  font-weight: 700;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+.section-title {
+  font-family: "GrandSlang Roman", Georgia, serif;
+  font-weight: 400;
   text-transform: uppercase;
-  color: #888;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: #1a1818;
+}
+.section-title--lg { font-size: clamp(3rem, 8vw, 8rem); }
+.section-title--md { font-size: clamp(2rem, 5vw, 4.5rem); }
+.section-title--sm { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+
+.sub-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: #1a1818;
 }
 
-.project-meta-value {
-  font-size: 0.95rem;
-  line-height: 1.5;
+.prose {
+  max-width: 700px;
+  font-size: 1rem;
+  line-height: 1.75;
   color: #2a2a2a;
-  max-width: 300px;
 }
-
-.project-meta-value a {
+.prose p { margin-bottom: 1.5rem; }
+.prose a {
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: opacity 0.3s ease;
 }
+.prose a:hover { opacity: 0.6; }
+.prose blockquote {
+  font-family: "GrandSlang Roman", Georgia, serif;
+  font-size: clamp(1.3rem, 2.5vw, 2.2rem);
+  line-height: 1.3;
+  color: #1a1818;
+  padding: 2rem 0;
+  border-top: 1px solid #c8c3bb;
+  border-bottom: 1px solid #c8c3bb;
+  margin: 2.5rem 0;
+}
+.prose ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 1.5rem; }
+.prose li { line-height: 1.8; }
 
-.project-meta-value a:hover { opacity: 0.6; }
-
-.project-body {
-  padding: 0 2rem 3rem;
-  max-width: 750px;
-  opacity: 0;
-  animation: fadeInUp 0.5s ease forwards 0.8s;
+.page-inner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
 }
 
-.project-cta {
-  padding: 2rem 2rem 4rem;
-}
-
-.project-cta-link {
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: opacity 0.3s ease;
-}
-
-.project-cta-link:hover { opacity: 0.5; }
-
-/* Prev / Next navigation */
-.project-nav {
+.page-header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
-  border-top: 1px solid #c8c3bb;
+  padding: 1.5rem 2rem;
+  z-index: 50;
+  pointer-events: none;
 }
-
-.project-nav a {
+.page-header a, .page-header small { pointer-events: auto; }
+.page-header-back {
   font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: opacity 0.3s ease;
 }
-
-.project-nav a:hover { opacity: 0.5; }
-
-
-/* =============================================
-   ABOUT PAGE
-   ============================================= */
-.about-content {
-  padding: 0 2rem 3rem;
-  max-width: 750px;
-  opacity: 0;
-  animation: fadeInUp 0.7s ease forwards 0.6s;
+.page-header-back:hover { opacity: 0.5; }
+.page-header-copyright {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
 }
 
-.about-section {
-  padding: 2.5rem 2rem;
-  max-width: 750px;
+/* =============================================
+   CONTACT PAGE (corregida con transiciones exactas)
+   ============================================= */
+.contact-page {
+  background-color: #1a1818;
 }
 
+.contact-page .contact-hello,
+.contact-page .contact-text,
+.contact-page .contact-info,
+.contact-page .contact-info a,
+.contact-page .contact-label {
+  color: #ece7e1;
+}
 
-/* =============================================
-   CONTACT PAGE
-   ============================================= */
 .contact-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  margin-top: 150px;
+  margin-left: 130px; /* mismo ancho que la sidebar */
   padding: 2rem;
 }
 
-.contact-content { max-width: 600px; }
+.contact-content {
+  max-width: 600px;
+}
 
+/* "Hello." con spring exacto (damping 30, stiffness 200, delay 1s) */
 .contact-hello {
   font-family: "GrandSlang Roman", Georgia, serif;
-  font-size: clamp(4rem, 10vw, 10rem);
+  font-size: clamp(5rem, 12vw, 12rem);
   font-weight: 400;
   line-height: 0.9;
   margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeInBlur 0.8s ease forwards 0.6s;
+  animation: helloSpring 0.8s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  animation-delay: 1s;
+  opacity: 0.001;
+  transform: translateY(430px);
 }
 
+/* Párrafo: fade + blur + subida (delay ~1.2s) */
 .contact-text {
   font-size: 1rem;
   line-height: 1.7;
-  color: #2a2a2a;
   margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeInUp 0.5s ease forwards 0.9s;
+  animation: contactFadeUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 1.2s;
+  opacity: 0.001;
+  filter: blur(10px);
+  transform: translateY(20px);
 }
 
+/* Información de contacto: mismo efecto pero con delay 1.4s */
 .contact-info {
   font-style: normal;
   font-size: 0.95rem;
   line-height: 2;
-  color: #2a2a2a;
-  opacity: 0;
-  animation: fadeInUp 0.5s ease forwards 1.1s;
+  animation: contactFadeUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 1.4s;
+  opacity: 0.001;
+  filter: blur(10px);
+  transform: translateY(20px);
 }
 
 .contact-info a {
   text-decoration: underline;
   text-underline-offset: 3px;
-  transition: opacity 0.3s ease;
+  transition: text-decoration 0.25s ease;
 }
 
-.contact-info a:hover { opacity: 0.6; }
+.contact-info a:hover {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
 
-.contact-label { font-weight: 600; }
-
+.contact-label {
+  font-weight: 600;
+}
 
 /* =============================================
    SHOP PAGE
@@ -906,20 +788,17 @@ img {
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards 0.6s;
 }
-
 .shop-intro p {
   font-size: 1rem;
   line-height: 1.7;
   color: #2a2a2a;
 }
-
 .shop-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   padding: 0 2rem 4rem;
 }
-
 .shop-card {
   display: block;
   border-radius: 12px;
@@ -928,14 +807,11 @@ img {
   opacity: 0;
   animation: fadeInUp 0.5s ease forwards;
 }
-
 .shop-card:nth-child(1) { animation-delay: 0.7s; }
 .shop-card:nth-child(2) { animation-delay: 0.8s; }
 .shop-card:nth-child(3) { animation-delay: 0.9s; }
 .shop-card:nth-child(4) { animation-delay: 1.0s; }
-
 .shop-card:hover { transform: translateY(-4px); }
-
 .shop-card-image {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -946,26 +822,22 @@ img {
   border-radius: 12px;
   overflow: hidden;
 }
-
 .shop-card-placeholder {
   font-family: "GrandSlang Roman", Georgia, serif;
   font-size: 1.5rem;
   color: #1a1818;
   opacity: 0.25;
 }
-
 .shop-card-info {
   padding: 1rem 0.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .shop-card-name {
   font-family: "GrandSlang Roman", Georgia, serif;
   font-size: 1.1rem;
 }
-
 .shop-card-price {
   font-size: 0.8rem;
   font-weight: 700;
@@ -973,6 +845,208 @@ img {
   color: #888;
 }
 
+/* =============================================
+   BARRA LATERAL REUTILIZABLE (para about, etc.)
+   ============================================= */
+.wd-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 69px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.wd-sidebar-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  pointer-events: auto;
+}
+
+.wd-sidebar-work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wd-sidebar-work-link {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1a1818;
+  text-decoration: none;
+  transition: text-decoration 0.25s ease;
+}
+
+.wd-sidebar-work-link:hover {
+  text-decoration: underline;
+}
+
+.wd-sidebar-line {
+  width: 1px;
+  height: 80px;
+  background-color: #1a1818;
+  opacity: 0.35;
+}
+
+.wd-sidebar-copyright {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #1a1818;
+  opacity: 0.5;
+}
+
+/* =============================================
+   ABOUT PAGE
+   ============================================= */
+.about-detail-page {
+  background-color: #ece7e1;
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+  overflow: visible;
+}
+
+.about-content-wrapper {
+  flex: 1;
+  margin-left: 3.5rem;
+  min-width: 280px;
+  padding: 6rem 0 6rem 5rem;
+}
+
+.about-title-wrapper {
+  margin-bottom: 3rem;
+}
+
+.about-title {
+  font-family: "GrandSlang Roman", Georgia, serif;
+  font-size: clamp(4rem, 10vw, 12rem);
+  font-weight: 400;
+  text-transform: none;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: #1a1818;
+  margin: 0;
+  opacity: 0.001;
+  transform: translateY(430px);
+  animation: aboutTitleSpring 0.8s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+.about-subtitle {
+  font-family: "GrandSlang Roman", Georgia, serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #1a1818;
+  margin-bottom: 2rem;
+}
+
+.about-text p {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color: #2a2a2a;
+  margin-bottom: 1.5rem;
+}
+
+.about-quote {
+  font-family: "GrandSlang Roman", Georgia, serif;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  color: #1a1818;
+  margin: 2rem 0;
+  border-left: none;
+  padding-left: 0;
+}
+
+.about-section-title {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a1818;
+  margin: 2.5rem 0 1rem;
+}
+
+.about-list {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #2a2a2a;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.about-list li { margin-bottom: 0.25rem; }
+
+.about-skills-text,
+.about-kudos-text {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #2a2a2a;
+  margin-bottom: 1.5rem;
+}
+
+.about-kudos-text a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration 0.25s ease, text-decoration-thickness 0.25s ease;
+}
+
+.about-kudos-text a:hover {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.about-image-wrapper {
+  flex: 0 0 340px;
+  position: relative;
+  top: 70px;
+  align-self: flex-start;
+  margin-right: 2.4rem;
+  z-index: 5;
+  display: block;
+}
+
+.about-image {
+  width: 100%;
+  height: 400px;
+  display: block;
+  border-radius: 0;
+  opacity: 0.001;
+  transform: scale(0.5);
+  animation: aboutImageSpring 1s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  animation-delay: 0.2s;
+}
 
 /* =============================================
    RESPONSIVE
@@ -982,12 +1056,26 @@ img {
     left: 50%;
     transform: translate(-30%, -50%);
   }
-
   .bio-section { max-width: 320px; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    padding: 0 1.5rem;
+  }
+  .about-content-wrapper {
+    padding: 4rem 0 2rem 0;
+  }
+  .about-image-wrapper {
+    position: relative;
+    top: 0;
+    margin: 0 auto 3rem;
+    max-width: 280px;
+  }
+}
 
+@media (max-width: 768px) {
   /* Home */
   .page {
     height: auto;
@@ -996,35 +1084,27 @@ img {
     display: flex;
     flex-direction: column;
   }
-
   .social-column {
     position: relative;
-    top: auto;
-    left: auto;
+    top: auto; left: auto;
     flex-direction: row;
     gap: 1rem;
     margin-bottom: 2rem;
   }
-
   .social-line { display: none; }
-
   .copyright-vertical {
     position: relative;
-    bottom: auto;
-    left: auto;
+    bottom: auto; left: auto;
     writing-mode: horizontal-tb;
     margin-top: 3rem;
     text-align: center;
   }
-
   .nav-giant {
     position: relative;
-    top: auto;
-    left: auto;
+    top: auto; left: auto;
     transform: none;
     margin-bottom: 2rem;
   }
-
   .nav-giant-link {
     font-size: clamp(3rem, 15vw, 5rem);
     opacity: 1;
@@ -1033,98 +1113,126 @@ img {
     transform: none;
     animation: none;
   }
-  
-  .nav-giant-link.is-visible {
-    animation: none;
-  }
-  
-  .nav-giant-link.is-visible:hover {
-    transform: none;
-    transition: none;
-  }
-
-  .bio-section {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
+  .nav-giant-link.is-visible         { animation: none; }
+  .nav-giant-link.is-visible:hover   { transform: none; transition: none; }
 
   .template-card-wrapper {
     position: relative;
-    top: auto;
-    right: auto;
+    top: auto; right: auto;
     margin-bottom: 2rem;
     max-width: 100%;
     animation: none;
     opacity: 1;
     transform: none;
   }
+  .template-card { max-width: 100%; }
+  .template-card:hover .template-card-slideshow { transform: none; }
+  .template-card:hover .template-card-title { text-decoration: underline; }
 
-  .template-card {
+  .bio-section {
+    position: relative;
+    left: auto; bottom: auto;
+    margin-bottom: 2rem;
     max-width: 100%;
   }
-  
-  .template-card:hover .template-card-slideshow,
-  .template-card:hover .template-card-img {
+
+  /* Work Page Mobile */
+  .work-page { overflow-x: hidden; }
+  .work-sidebar { display: none; }
+  .work-layout { flex-direction: column; min-height: 100vh; }
+  .work-left {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 80px 40px 0;
+    justify-content: flex-start;
+  }
+  .work-right {
+    margin-left: 0;
+    width: 100%;
+    min-height: auto;
+    padding: 56px 40px 100px;
+  }
+  .project-name {
+    font-size: clamp(2.5rem, 13vw, 5rem);
+    opacity: 1;
+    filter: none;
     transform: none;
   }
-  
-  .template-card:hover .template-card-title {
-    text-decoration: underline;
+  .project-tag {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+  .project-item.is-visible .project-name,
+  .project-item.is-visible .project-tag {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+  .wl-label, .wl-p1, .wl-p2 {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none;
   }
 
-  /* Inner pages */
+  /* About mobile */
+  .about-title {
+    font-size: 4rem;
+  }
+  .about-subtitle {
+    font-size: 1.5rem;
+  }
+  .about-quote {
+    font-size: 1.4rem;
+  }
+  .about-content-wrapper {
+    padding: 2rem 0;
+  }
+
+  /* Contact page mobile */
+  .work-sidebar {
+    display: none;
+  }
+  .contact-main {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+  /* Ajustamos animaciones en móvil para que no se solapen */
+  .contact-hello {
+    animation-delay: 0.5s;
+  }
+  .contact-text {
+    animation-delay: 0.7s;
+  }
+  .contact-info {
+    animation-delay: 0.9s;
+  }
+
+  /* Inner pages mobile */
   .page-header { padding: 1rem 1.25rem; }
-
-  .page-hero,
-  .project-hero {
-    padding: 6rem 1.25rem 1.5rem;
-  }
-
-  .about-content,
-  .about-section,
-  .project-body,
-  .project-meta,
-  .project-cta,
   .shop-intro {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
-
   .shop-grid {
     grid-template-columns: 1fr;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
+}
 
-  .project-meta { gap: 1.5rem; }
-  .project-nav  { padding: 1.5rem 1.25rem; }
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .work-left { padding: 0 0 100px 80px; }
+  .work-right { padding: 80px 80px 80px 0; gap: 16px; }
+  .project-name { font-size: clamp(2.5rem, 5.5vw, 7rem); }
+}
 
-  /* Work page dark — mobile */
-  .work-page { overflow: auto; }
-
-  .work-layout {
-    flex-direction: column;
-    height: auto;
-    overflow: visible;
-  }
-
-  .work-left {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 7rem 1.5rem 2rem;
-  }
-
-  .work-right {
-    margin-left: 0;
-    width: 100%;
-    height: auto;
-    overflow: visible;
-    padding: 1rem 1.5rem 5rem;
-  }
-
-  .project-name { font-size: clamp(2.5rem, 12vw, 4rem); }
+/* Large desktop */
+@media (min-width: 1440px) {
+  .work-right { gap: 4px; }
+  .project-name { font-size: clamp(5rem, 7.5vw, 11rem); }
 }

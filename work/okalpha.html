@@ -3,107 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Okalpha - Lauren Waller</title>
-  <meta name="description" content="A lego-inspired website built in Webflow for Okalpha, a Cape Town based animation studio.">
+  <title>Okalpha — Lauren Waller</title>
+  <meta name="description" content="A lego-inspired website I built in Webflow for Okalpha, a Cape Town based animation studio with a heart of gold.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="work-detail.css">
 </head>
-<body>
+<body class="work-detail-page">
 
-  <div class="page-overlay"></div>
+  <div class="page-overlay enter" aria-hidden="true"></div>
 
-  <div class="page-inner">
-
-    <!-- Header -->
-    <header class="page-header">
-      <a href="../work.html" class="page-header-back">Work</a>
-      <small class="page-header-copyright">&copy; 2025</small>
-    </header>
-
-    <!-- Hero -->
-    <section class="project-hero" aria-label="Project heading">
-      <h1 class="section-title section-title--lg">Okalpha</h1>
-      <p class="project-subtitle">
-        A lego-inspired website I built in Webflow for Okalpha, a Cape Town based
-        animation studio with a heart of gold.
-      </p>
-    </section>
-
-    <!-- Meta -->
-    <main>
-      <dl class="project-meta">
-        <div class="project-meta-item">
-          <dt class="project-meta-label">Role</dt>
-          <dd class="project-meta-value">Web Development</dd>
-        </div>
-        <div class="project-meta-item">
-          <dt class="project-meta-label">Responsibilities</dt>
-          <dd class="project-meta-value">Consultation, Webflow Setup, Image Saving &amp; Optimisation, Webflow Development, Custom CSS, Animation, SEO, Launch</dd>
-        </div>
-        <div class="project-meta-item">
-          <dt class="project-meta-label">URL</dt>
-          <dd class="project-meta-value"><a href="http://okalpha.co" target="_blank" rel="noopener">http://okalpha.co</a></dd>
-        </div>
-      </dl>
-
-      <!-- Body -->
-      <article class="project-body prose">
-        <p>
-          This project was a collaboration with Cape Town Design Agency
-          <a href="#">MakeReign</a> who designed the website.
-        </p>
-        <p>
-          Being an animation studio, Okalpha had some very clear ideas for how the
-          website should feel and what sort of interactions they wanted to see. They
-          also wanted a CMS that was easy to use, and so I recommended Webflow as the
-          website builder so that they could maintain their own website going forward
-          really easily.
-        </p>
-        <p>
-          I learned a lot about Webflow while building this site. I love HTML and CSS,
-          but I find Javascript rather difficult and your animation possibilities would
-          normally be very limited without this skill. With Webflow, you don't need to
-          know Javascript, hallelujah! And you can do some really beautiful things.
-          I had a lot of fun with these animations.
-        </p>
-        <p>
-          The decision to use Webflow ended up being a great choice not just for the
-          CMS and animations, but for discoverability. After featuring it on the
-          <a href="#">Webflow Showcase</a> it was <a href="#">tweeted</a> by the CEO
-          of Webflow and featured on <a href="#">Typewolf</a>, <a href="#">Muzli</a>
-          and many other web design inspiration platforms.
-        </p>
-        <p>
-          In 2021 Webflow featured the Okalpha website in their commercial, and on my
-          birthday! Best gift ever. And an outcome I never dreamed would happen.
-        </p>
-      </article>
-
-      <!-- CTA -->
-      <div class="project-cta">
-        <span class="sub-title">Check it out</span>
+  <!-- Barra lateral -->
+  <div class="wd-sidebar">
+    <div class="wd-sidebar-inner">
+      <div class="wd-sidebar-work">
+        <a href="../work.html" class="wd-sidebar-work-link">WORK</a>
+        <span class="wd-sidebar-line"></span>
       </div>
-    </main>
-
-    <!-- Prev / Next -->
-    <nav class="project-nav" aria-label="Project navigation">
-      <a href="superlink.html">&lsaquo; Superlink</a>
-      <a href="karoo.html">Karoo &rsaquo;</a>
-    </nav>
-
+      <div class="wd-sidebar-copyright">
+        <small>&copy; 2025</small>
+      </div>
+    </div>
   </div>
 
+  <!-- Hero -->
+  <section class="wd-hero">
+    <h1 class="wd-title">Okalpha</h1>
+  </section>
+
+  <p class="wd-subtitle">
+    A lego-inspired website I built in Webflow for Okalpha, a Cape Town based animation studio with a heart of gold.
+  </p>
+
+  <dl class="wd-meta">
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">Role</dt>
+      <dd class="wd-meta-value">Web Development</dd>
+    </div>
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">Responsibilities</dt>
+      <dd class="wd-meta-value">Consultation, Webflow Setup, Image Saving &amp; Optimisation, Webflow Development, Custom CSS, Animation, SEO, Launch</dd>
+    </div>
+    <div class="wd-meta-item">
+      <dt class="wd-meta-label">URL</dt>
+      <dd class="wd-meta-value">
+        <a href="http://okalpha.co" target="_blank" rel="noopener noreferrer">http://okalpha.co</a>
+      </dd>
+    </div>
+  </dl>
+
+  <!-- Hero image -->
+  <div class="wd-media-hero">
+    <img src="https://framerusercontent.com/images/eHtkXTc4Q5Vzhl8Tkm88benYjT4.jpg" alt="Okalpha website hero">
+  </div>
+
+  <div class="wd-body">
+    <p>
+      This project was a collaboration with Cape Town Design Agency <a href="https://makereign.com" target="_blank" rel="noopener noreferrer">MakeReign</a> who designed the website.
+    </p>
+    <p>
+      Being an animation studio, Okalpha had some very clear ideas for how the website should feel and what sort of interactions they wanted to see. They also wanted a CMS that was easy to use, and so I recommended Webflow as the website builder so that they could maintain their own website going forward really easily.
+    </p>
+  </div>
+
+  <!-- Imágenes de diseño -->
+  <div class="wd-image-full">
+    <img src="https://framerusercontent.com/images/y1kgsYydVvVSEvifUgyVV0QNLGE.jpg" alt="Okalpha design 1">
+  </div>
+  <div class="wd-image-full">
+    <img src="https://framerusercontent.com/images/X5Vp2PFNXbvujuQoYaiBFk4inwk.jpg" alt="Okalpha design 2">
+  </div>
+
+  <div class="wd-body">
+    <p>
+      I learned a lot about Webflow while building this site. I love HTML and CSS, but I find Javascript rather difficult and your animation possibilities would normally be very limited without this skill. With Webflow, you don't need to know Javascript, hallelujah! And you can do some really beautiful things. I had a lot of fun with these animations.
+    </p>
+  </div>
+
+  <!-- Vídeo de escritorio (MP4 local) -->
+  <div class="wd-media-hero">
+    <video src="https://laurenwaller-portfolio.s3.eu-west-2.amazonaws.com/desktop-vid.mp4" loop autoplay muted playsinline style="width:100%;"></video>
+  </div>
+
+  <div class="wd-body">
+    <p>
+      The decision to use Webflow ended up being a great choice not just for the CMS and animations, but for discoverability. After featuring it on the <a href="https://webflow.com/website/Okalpha" target="_blank" rel="noopener noreferrer">Webflow Showcase</a> it was <a href="https://twitter.com/callmevlad/status/1085979629322567681" target="_blank" rel="noopener noreferrer">tweeted</a> by the CEO of Webflow and featured on <a href="https://www.typewolf.com/site-of-the-day/okalpha" target="_blank" rel="noopener noreferrer">Typewolf</a>, <a href="https://search.muz.li/N2YxNTllOTZk" target="_blank" rel="noopener noreferrer">Muzli</a> and many other web design inspiration platforms.
+    </p>
+  </div>
+
+  <!-- Imagen móvil -->
+  <div class="wd-image-full">
+    <img src="https://framerusercontent.com/images/lOl3PnGgKSC7HK0skurkN6AiDA.png" alt="Okalpha mobile view">
+  </div>
+
+  <div class="wd-body">
+    <blockquote>
+      In 2021 Webflow featured the Okalpha website in their commercial, and on my birthday! Best gift ever. And an outcome I never dreamed would happen.
+    </blockquote>
+  </div>
+
+  <!-- Vídeo de YouTube (centrado, ancho máximo 800px, relación 16:9) -->
+  <div class="wd-video-wrapper">
+    <div class="youtube-container" data-video="Ojiv9Smi4XE">
+      <div class="youtube-thumbnail">
+        <img src="https://i.ytimg.com/vi_webp/Ojiv9Smi4XE/maxresdefault.webp" alt="Okalpha Webflow showcase thumbnail">
+        <button class="youtube-play-btn" aria-label="Play video">
+          <svg height="48" viewBox="0 0 68 48" width="68">
+            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"/>
+            <path d="M 45,24 27,14 27,34" fill="#fff"/>
+          </svg>
+        </button>
+      </div>
+      <div class="youtube-iframe" style="display: none;">
+        <iframe src="https://www.youtube.com/embed/Ojiv9Smi4XE?rel=0&modestbranding=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón CTA -->
+  <div class="wd-cta-wrapper">
+  <a href="http://okalpha.co" target="_blank" rel="noopener noreferrer" class="wd-cta-link" id="ctaButton">
+    Check it out
+    <img class="wd-cta-arrow" src="img/—Pngtree—white direction arrow right icon_4539096.png" title="flecha iconos" alt="">
+  </a>
+</div>
+
+  <!-- Navegación prev / next -->
+  <nav class="wd-nav" aria-label="Project navigation">
+    <a href="superlink.html">← Superlink</a>
+    <a href="karoo.html">Karoo →</a>
+  </nav>
+
+  <script src="work-detail.js"></script>
   <script>
     (function() {
-      var overlay = document.querySelector('.page-overlay');
-      if (!overlay) return;
-      overlay.offsetHeight;
-      setTimeout(function() { overlay.classList.add('hidden'); }, 100);
-      setTimeout(function() { overlay.style.pointerEvents = 'none'; }, 1400);
+      var btn = document.getElementById('ctaButton');
+      if (!btn) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { btn.classList.add('visible'); }
+          else { btn.classList.remove('visible'); }
+        });
+      }, { threshold: 0.2 });
+      observer.observe(btn);
+    })();
+
+    // Vídeo de YouTube con miniatura y reproducción al hacer clic
+    (function() {
+      var containers = document.querySelectorAll('.youtube-container');
+      containers.forEach(function(container) {
+        var thumbnailDiv = container.querySelector('.youtube-thumbnail');
+        var iframeDiv = container.querySelector('.youtube-iframe');
+        var videoId = container.getAttribute('data-video');
+        if (!thumbnailDiv || !iframeDiv) return;
+
+        var playBtn = thumbnailDiv.querySelector('.youtube-play-btn');
+        if (!playBtn) return;
+
+        playBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          thumbnailDiv.style.display = 'none';
+          iframeDiv.style.display = 'block';
+          var iframe = iframeDiv.querySelector('iframe');
+          if (iframe && iframe.src.indexOf('autoplay=1') === -1) {
+            iframe.src += (iframe.src.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1';
+          }
+        });
+      });
     })();
   </script>
-
 </body>
 </html>
