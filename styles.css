@@ -465,7 +465,7 @@ img {
 }
 
 .sidebar-home-link:hover {
-  text-decoration: underline; /* Subrayado en lugar de opacidad */
+  text-decoration: underline;
 }
 
 .sidebar-line {
@@ -723,7 +723,7 @@ img {
 }
 
 .contact-main {
-  margin-top: 8.2rem;
+  margin-top: 82rem;
   margin-left: 8.2rem;
   padding: 2rem;
 }
@@ -1109,23 +1109,13 @@ img {
   }
   .nav-giant-link {
     font-size: clamp(3rem, 15vw, 5rem);
-    opacity: 1;
-    filter: none;
-    translate: none;
-    transform: none;
-    animation: none;
   }
-  .nav-giant-link.is-visible         { animation: none; }
-  .nav-giant-link.is-visible:hover   { transform: none; transition: none; }
 
   .template-card-wrapper {
     position: relative;
     top: auto; right: auto;
     margin-bottom: 2rem;
     max-width: 100%;
-    animation: none;
-    opacity: 1;
-    transform: none;
   }
   .template-card { max-width: 100%; }
   .template-card:hover .template-card-slideshow { transform: none; }
@@ -1140,47 +1130,104 @@ img {
 
   /* Work Page Mobile */
   .work-page { overflow-x: hidden; }
-  .work-sidebar { display: none; }
-  .work-layout { flex-direction: column; min-height: 100vh; }
+  /* Transformar sidebar en barra superior horizontal */
+  .work-sidebar {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    background-color: #1a1818;
+    z-index: 1000;
+  }
+  .sidebar-top {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .sidebar-home-link {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.75rem;
+  }
+  .sidebar-line {
+    display: none;
+  }
+  .sidebar-copy {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+  /* Ajustar contenido para que no quede oculto bajo el header */
+  .work-layout {
+    margin-top: 60px;
+  }
   .work-left {
     position: relative;
     left: 0;
     width: 100%;
     height: auto;
-    padding: 80px 40px 0;
-    justify-content: flex-start;
+    padding: 40px 20px 0;
   }
   .work-right {
     margin-left: 0;
     width: 100%;
-    min-height: auto;
-    padding: 56px 40px 100px;
+    padding: 40px 20px 80px;
   }
   .project-name {
     font-size: clamp(2.5rem, 13vw, 5rem);
-    opacity: 1;
-    filter: none;
-    transform: none;
-  }
-  .project-tag {
-    opacity: 1;
-    filter: none;
-    transform: none;
-  }
-  .project-item.is-visible .project-name,
-  .project-item.is-visible .project-tag {
-    opacity: 1;
-    filter: none;
-    transform: none;
-  }
-  .wl-label, .wl-p1, .wl-p2 {
-    opacity: 1;
-    filter: none;
-    transform: none;
-    animation: none;
   }
 
-  /* About mobile */
+  /* About page mobile: transformar .wd-sidebar en barra superior */
+  .wd-sidebar {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #ece7e1;
+    z-index: 1000;
+    pointer-events: auto;
+  }
+  .wd-sidebar-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+  }
+  .wd-sidebar-work {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .wd-sidebar-work-link {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.75rem;
+  }
+  .wd-sidebar-line {
+    display: none;
+  }
+  .wd-sidebar-copyright {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+  .about-container {
+    margin-top: 60px;
+    padding: 0 1.5rem;
+  }
+  .about-content-wrapper {
+    padding: 2rem 0;
+    margin-left: 0;
+  }
   .about-title {
     font-size: 4rem;
   }
@@ -1190,16 +1237,13 @@ img {
   .about-quote {
     font-size: 1.4rem;
   }
-  .about-content-wrapper {
-    padding: 2rem 0;
-  }
 
   /* Contact page mobile */
   .work-sidebar {
-    display: none;
+    display: flex !important;
   }
   .contact-main {
-    margin-left: 0;
+    margin: 60px 0 0 0;
     padding: 1.5rem;
   }
   .contact-hello {
@@ -1212,7 +1256,7 @@ img {
     animation-delay: 0.9s;
   }
 
-  /* Inner pages mobile */
+  /* Inner pages mobile (shop, etc) */
   .page-header { padding: 1rem 1.25rem; }
   .shop-intro {
     padding-left: 1.25rem;

@@ -78,8 +78,85 @@
   opacity: 0.5;
 }
 
+/* =============================================
+   RESPONSIVE MÓVIL: convertir sidebar en header horizontal
+   ============================================= */
 @media (max-width: 768px) {
-  .wd-sidebar { display: none; }
+  .wd-sidebar {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #ece7e1;
+    z-index: 1000;
+    pointer-events: auto;
+  }
+  .wd-sidebar-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+  }
+  .wd-sidebar-work {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .wd-sidebar-work-link {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.75rem;
+  }
+  .wd-sidebar-line {
+    display: none;
+  }
+  .wd-sidebar-copyright {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+  /* Ajustar el resto de elementos de la página de detalle para que no queden ocultos */
+  .wd-hero {
+    margin-top: 60px;
+    transform: none;
+    animation: none;
+  }
+  .wd-title {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .wd-subtitle {
+    font-size: 32px;
+    padding: 0 1.5rem;
+  }
+  .wd-meta {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+  .wd-media-hero, .wd-image-full {
+    padding: 0 1.5rem;
+  }
+  .wd-image-full {
+    padding-bottom: 1.5rem;
+  }
+  .wd-body {
+    padding: 3rem 1.5rem;
+  }
+  .wd-body blockquote {
+    font-size: 32px;
+    margin: 2rem 0;
+  }
+  .wd-cta-wrapper {
+    padding: 1rem 1.5rem 3rem;
+  }
+  .wd-nav {
+    padding: 1.5rem;
+  }
 }
 
 /* =============================================
@@ -230,13 +307,6 @@
   letter-spacing: 0;
 }
 
-@media (max-width: 768px) {
-  .wd-body blockquote { font-size: 32px; margin: 2rem 0; }
-}
-@media (max-width: 480px) {
-  .wd-body blockquote { font-size: 28px; }
-}
-
 /* =============================================
    IMÁGENES Y VÍDEOS (sin border-radius)
    ============================================= */
@@ -285,14 +355,11 @@
   border-radius: 60px;
   border: none;
   outline: none;
-  
-  /* Estado inicial oculto (para animación al hacer scroll) */
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Clase que se añade cuando el botón entra en el viewport */
 .wd-cta-link.visible {
   opacity: 1;
   transform: translateY(0);
@@ -309,18 +376,9 @@
   display: block;
 }
 
-/* Asegura que los trazos se hereden correctamente */
 .wd-cta-arrow path {
   stroke: currentColor;
   stroke-width: 1.5;
-}
-
-@media (max-width: 768px) {
-  .wd-cta-link { font-size: 22px; padding: 6px 10px 6px 22px; }
-  .wd-cta-arrow {
-    width: 32px;
-    height: 32px;
-  }
 }
 
 /* =============================================
@@ -404,27 +462,6 @@
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-@media (max-width: 768px) {
-  .wd-video-wrapper {
-    padding: 0 1.5rem;
-  }
-}
-
-/* =============================================
-   RESPONSIVE GENERAL
-   ============================================= */
-@media (max-width: 768px) {
-  .wd-subtitle { font-size: 32px; padding: 0 1.5rem; }
-  .wd-meta { flex-direction: column; gap: 2rem; padding: 0 1.5rem; }
-  .wd-media-hero, .wd-image-full { padding: 0 1.5rem; }
-  .wd-image-full { padding-bottom: 1.5rem; }
-  .wd-body { padding: 3rem 1.5rem; }
-  .wd-cta-wrapper { padding: 1rem 1.5rem 3rem; }
-  .wd-nav { padding: 1.5rem; }
-  .wd-hero { transform: none; animation: none; }
-  .wd-title { opacity: 1; transform: none; animation: none; }
 }
 
 /* =============================================
