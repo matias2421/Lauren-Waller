@@ -45,8 +45,9 @@ img {
 }
 
 /* =============================================
-   PAGE TRANSITION OVERLAY (CORREGIDO: sube hacia arriba)
+   PAGE TRANSITION OVERLAY
    ============================================= */
+/* Comportamiento por defecto: overlay oscuro que se desliza hacia ABAJO */
 .page-overlay {
   position: fixed;
   inset: 0;
@@ -58,12 +59,16 @@ img {
 }
 
 .page-overlay.hidden {
-  transform: translateY(-100%);  /* Se desliza hacia arriba */
+  transform: translateY(100%); /* Hacia abajo */
 }
 
-/* Overlay específico para la página de contacto (fondo claro) */
+/* Para la página de contacto: overlay claro y se desliza hacia ARRIBA */
 .contact-page .page-overlay {
   background-color: #ece7e1;
+}
+
+.contact-page .page-overlay.hidden {
+  transform: translateY(-100%); /* Hacia arriba */
 }
 
 /* =============================================
@@ -415,7 +420,7 @@ img {
   background-color: #ece7e1;
   transform: translateY(0);
 }
-.work-page .page-overlay.hidden { transform: translateY(-100%); }
+.work-page .page-overlay.hidden { transform: translateY(100%); }
 
 .work-layout {
   display: flex;
@@ -703,7 +708,7 @@ img {
 }
 
 /* =============================================
-   CONTACT PAGE (corregida con transiciones exactas)
+   CONTACT PAGE
    ============================================= */
 .contact-page {
   background-color: #1a1818;
@@ -718,8 +723,8 @@ img {
 }
 
 .contact-main {
-  margin-top: 150px;
-  margin-left: 130px; /* mismo ancho que la sidebar */
+  margin-top: 8.2rem;
+  margin-left: 8.2rem;
   padding: 2rem;
 }
 
@@ -727,10 +732,9 @@ img {
   max-width: 600px;
 }
 
-/* "Hello." con spring exacto (damping 30, stiffness 200, delay 1s) */
 .contact-hello {
   font-family: "GrandSlang Roman", Georgia, serif;
-  font-size: clamp(5rem, 12vw, 12rem);
+  font-size: clamp(5rem, 13vw, 13rem);
   font-weight: 400;
   line-height: 0.9;
   margin-bottom: 2rem;
@@ -740,7 +744,6 @@ img {
   transform: translateY(430px);
 }
 
-/* Párrafo: fade + blur + subida (delay ~1.2s) */
 .contact-text {
   font-size: 1rem;
   line-height: 1.7;
@@ -752,7 +755,6 @@ img {
   transform: translateY(20px);
 }
 
-/* Información de contacto: mismo efecto pero con delay 1.4s */
 .contact-info {
   font-style: normal;
   font-size: 0.95rem;
@@ -1200,7 +1202,6 @@ img {
     margin-left: 0;
     padding: 1.5rem;
   }
-  /* Ajustamos animaciones en móvil para que no se solapen */
   .contact-hello {
     animation-delay: 0.5s;
   }
